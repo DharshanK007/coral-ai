@@ -44,40 +44,20 @@ Higher RM-NPI values indicate **greater nutrient pressure entering marine ecosys
 ---
 
 # 🏗️ System Architecture
-
-Where:
-
-| Factor | Description |
-|------|------|
-| Q | River discharge intensity |
-| N | Nutrient load proxy derived from land vegetation signals |
-| S | Seasonal intensity factor |
-| D | Distance decay from river mouth |
-
-Higher RM-NPI values indicate **greater nutrient pressure entering marine ecosystems**, which may lead to:
-
-- Algal blooms
-- Oxygen depletion
-- Marine biodiversity stress
-- Coastal pollution events
-
----
-
-# 🏗️ System Architecture
 Multi-source datasets
-↓
+      ↓
 Data ingestion
-↓
+      ↓
 Preprocessing & spatial alignment
-↓
+      ↓
 Feature engineering
-↓
+      ↓
 Autoencoder-based representation learning
-↓
+      ↓
 RM-NPI computation
-↓
+      ↓
 Anomaly detection
-↓
+      ↓
 Ocean ecological risk visualization
 
 
