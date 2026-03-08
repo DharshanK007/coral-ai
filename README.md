@@ -95,8 +95,7 @@ Explains the drivers of ecological risk.
 
 ## ⚠️ Environmental Anomaly Detection
 
-Shows unusual environmental events detected by the AI model.<img width="931" height="860" alt="plot7_ecological_risk_zones" src="https://github.com/user-attachments/assets/38afb668-773c-495e-a999-be6ad7b765ad" />
-
+Shows unusual environmental events detected by the AI model.
 
 ---<img width="1031" height="601" alt="plot4_anomaly_timeline" src="https://github.com/user-attachments/assets/1b83e7ab-ffab-45c1-b355-55b116c85eb2" />
 
