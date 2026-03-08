@@ -90,7 +90,7 @@ Displays seasonal variation in ecological risk levels.
 
 Explains the drivers of ecological risk.
 
----<img width="1063" height="583" alt="plot2_risk_over_time" src="https://github.com/user-attachments/assets/272978a0-9997-4ad0-bf70-1de005d9f067" />
+<img width="830" height="583" alt="plot3_drivers_bar_chart" src="https://github.com/user-attachments/assets/03837512-e58a-4582-910d-9d31dda4d5ab" />
 
 
 ## ⚠️ Environmental Anomaly Detection
