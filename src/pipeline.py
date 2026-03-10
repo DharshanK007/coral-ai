@@ -464,24 +464,47 @@ def run_pipeline(
     print(f"   - A total of {len(insights)} major insights were extracted for environmental officers.")
 
     # ==========================================================
-    # AI SIMPLE EXPLANATION (Groq)
+    # BIODIVERSITY INSIGHTS & LLM EXPLANATION (Groq)
     # ==========================================================
-    print("[LLM Explainer] Generating simple explanation from insights...")
+    print("\n[Biodiversity & LLM Explainer] Generating ecological threat report...")
     try:
+        from src.intelligence.biodiversity_assessor import BiodiversityAssessor
         from src.intelligence.llm_explainer import SimpleExplainerLLM
         import json
+        import textwrap
         
-        # Convert insights to JSON string for the LLM
-        insights_json = json.dumps(insights, default=str)
+        # 1. Run the Biodiversity Assessor
+        bio_assessor = BiodiversityAssessor()
+        bio_report, bio_filepath = bio_assessor.assess_biodiversity(df, npi_scores)
+        
+        print(f"  [saved] Biodiversity metrics exported to: {bio_filepath}")
+        print("\n  [DETECTED ECOLOGICAL THREATS]")
+        if not bio_report["biodiversity_threats"]:
+            print("  ✅ No immediate critical biodiversity threats detected in this region.")
+        else:
+            for threat in bio_report["biodiversity_threats"]:
+                metric_color = "🔴" if threat['severity'] == "CRITICAL" else "🟠" if threat['severity'] == "HIGH" else "🟡"
+                print(f"  {metric_color} {threat['threat_type']} ({threat['severity']})")
+                print(f"     • Trigger: {threat['trigger_metric']}")
+                print(f"     • Impact : {threat['affected_cells']} ocean cells ({threat['percentage_of_ocean']}% of region)")
+                print(f"     • Detail : {threat['description']}")
+
+        # 2. Combine physical insights + biodiversity threats for the LLM
+        combined_payload = {
+            "physical_ocean_insights": insights,
+            "biodiversity_threat_report": bio_report["biodiversity_threats"]
+        }
+        
+        combined_json = json.dumps(combined_payload, default=str)
         explainer = SimpleExplainerLLM()
-        simple_text = explainer.explain_data(insights_json, context="Newly generated oceanographic insights")
+        simple_text = explainer.explain_data(combined_json, context="Newly generated oceanographic and biodiversity insights")
         
         print("\n--- AI SIMPLE EXPLANATION ---")
-        import textwrap
         print(textwrap.fill(simple_text, width=80))
         print("-----------------------------\n")
+        
     except Exception as e:
-        print(f"  [!] Failed to generate LLM explanation: {e}\n")
+        print(f"  [!] Failed to generate Biodiv/LLM explanation: {e}\n")
 
     # ==========================================================
     # PHASE 6: Visualization
