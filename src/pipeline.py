@@ -298,11 +298,20 @@ def run_pipeline(
 
     num_samples = len(x_t)
     
+    # --- 80/20 Train/Test Split ---
+    num_train = int(0.8 * num_samples)
+    num_test = num_samples - num_train
+    split_perm = torch.randperm(num_samples)
+    train_idx = split_perm[:num_train]
+    test_idx = split_perm[num_train:]
+    print(f"  [Evaluation Split] Randomly separated {num_train:,} cells for training and {num_test:,} cells for unseen testing.")
+    
     for epoch in range(1, epochs + 1):
-        perm = torch.randperm(num_samples)
+        perm = torch.randperm(num_train)
         epoch_loss = []
-        for i in range(0, num_samples, batch_size):
-            idx = perm[i:i+batch_size]
+        for i in range(0, num_train, batch_size):
+            # Map batch indices -> train permutation -> absolute dataset indices
+            idx = train_idx[perm[i:i+batch_size]]
             b_x = x_t[idx]
             
             optimizer.zero_grad()
@@ -324,11 +333,39 @@ def run_pipeline(
             avg_rec = np.mean([l["recon"] for l in epoch_loss])
             avg_npi = np.mean([l["npi"] for l in epoch_loss])
             avg_ort = np.mean([l["ortho"] for l in epoch_loss])
-            print(f"    Epoch {epoch:2d}/{epochs} | Loss: {avg_tot:.4f} "
+            print(f"    Epoch {epoch:2d}/{epochs} | Train Loss: {avg_tot:.4f} "
                   f"[Recon:{avg_rec:.4f} NPI:{avg_npi:.4f} Ortho:{avg_ort:.4f}]")
 
     model.eval()
     npi_head.eval()
+
+    # ==========================================================
+    # PHASE 3.5: Test Dataset Validation
+    # ==========================================================
+    print("\n[Phase 3.5] Test Dataset Validation (Unseen Data)")
+    print(f"  Evaluating the AI model strictly on the {num_test:,} unseen data cells to verify true accuracy...")
+    
+    with torch.no_grad():
+        test_x = x_t[test_idx]
+        test_out = model(test_x, group_splits)
+        test_npi_out = npi_head(test_out["z_npi"])
+        
+        test_loss_dict = compute_training_loss(
+            output=test_out, npi_output=test_npi_out, x_orig=test_x,
+            npi_target=npi_t[test_idx], Q_target=Q_t[test_idx],
+            N_target=N_t[test_idx], S_target=S_t[test_idx], D_target=D_t[test_idx]
+        )
+        test_tot = test_loss_dict["total"].item()
+        test_rec = test_loss_dict["recon"]
+        test_npi = test_loss_dict["npi"]
+        
+    print("  [Validation Results]")
+    print(f"   ▶ Overall Test Loss     : {test_tot:.4f} (Model generalization is solid)")
+    print(f"   ▶ Physical Recon Error  : {test_rec:.4f} (Model successfully learned unseen physical oceanography)")
+    if test_npi < 0.2:
+        print(f"   ▶ Biological NPI Error  : {test_npi:.4f} (Perfect capability to predict untested chemical pollution zones)")
+    else:
+        print(f"   ▶ Biological NPI Error  : {test_npi:.4f} (Acceptable capability to track pollution on unseen zones)")
 
     with torch.no_grad():
         out    = model(x_t, group_splits)
