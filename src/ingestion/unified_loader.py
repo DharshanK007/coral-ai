@@ -1,4 +1,4 @@
-# Unified Data Loader -- Copernicus as primary source, CHIRPS as rainfall supplement
+# Unified Data Loader -- Copernicus as primary source, OpenMeteo as rainfall supplement
 import os
 import xarray as xr
 import pandas as pd
@@ -8,7 +8,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from .copernicus_fetcher import CopernicusFetcher
-from .chirps_fetcher import CHIRPSFetcher
+from .open_meteo_fetcher import OpenMeteoFetcher
 
 load_dotenv()
 
@@ -21,8 +21,8 @@ class UnifiedLoader:
         thetao, so, uo, vo, zos -- physics
         no3, po4, o2, chl       -- biogeochemistry
 
-    Supplement: CHIRPS Rainfall (public, no auth)
-        precip -> seasonal_factor (S component of RM-NPI)
+    Supplement: Open-Meteo Rainfall (public, no auth)
+        precipitation_sum -> seasonal_factor (S component of RM-NPI)
 
     All sources merged into a single flat DataFrame for the autoencoder.
     """
@@ -31,7 +31,7 @@ class UnifiedLoader:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.copernicus = CopernicusFetcher()
-        self.chirps = CHIRPSFetcher()
+        self.open_meteo = OpenMeteoFetcher()
 
     def fetch_all(
         self,
@@ -65,17 +65,17 @@ class UnifiedLoader:
             if not skip_on_error:
                 raise
 
-        # Supplement: CHIRPS rainfall (public, no auth)
+        # Supplement: Open-Meteo rainfall (public, no auth)
         print("\n" + "=" * 55)
-        print("SOURCE 2/2: CHIRPS Rainfall (Seasonal Factor)")
+        print("SOURCE 2/2: Open-Meteo Historical Rainfall (Seasonal Factor)")
         print("=" * 55)
         try:
-            datasets["chirps_rain"] = self.chirps.fetch(
+            datasets["openmeteo_rain"] = self.open_meteo.fetch(
                 start_date, end_date,
                 lat_min, lat_max, lon_min, lon_max,
             )
         except Exception as e:
-            print(f"  [!] CHIRPS fetch failed: {e}")
+            print(f"  [!] Open-Meteo fetch failed: {e}")
             if not skip_on_error:
                 raise
 
@@ -132,8 +132,8 @@ class UnifiedLoader:
             print("     - Physical: Temperature (thetao), Salinity (so), Ocean Currents (uo, vo), Sea Surface Height (zos)")
             print("     - Biological: Nitrate (no3), Phosphate (po4), Oxygen (o2), Chlorophyll (chl)")
             print("     - Derived Formulas: Current Speed, Nutrient Proxies")
-        if "chirps_rain" in datasets:
-            ds = datasets["chirps_rain"]
+        if "openmeteo_rain" in datasets:
+            ds = datasets["openmeteo_rain"]
             var_name = next(
                 (v for v in ds.data_vars if "prec" in v.lower() or "rain" in v.lower()),
                 list(ds.data_vars)[0],
@@ -142,7 +142,7 @@ class UnifiedLoader:
             if not rain_df.empty:
                 rain_df["seasonal_factor"] = np.clip(rain_df[var_name] / 200.0, 0, 1)
                 dfs.append(rain_df[["time", "lat", "lon", "seasonal_factor"]])
-                print(f"[Align] CHIRPS Rainfall: {len(rain_df)} rows")
+                print(f"  [Align] Open-Meteo Rainfall Processed: {len(rain_df)} rows snapped to ocean grid")
 
         if not dfs:
             return pd.DataFrame()
