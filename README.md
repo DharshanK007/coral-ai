@@ -131,6 +131,20 @@ The platform can be used for:
 
 ---
 
+# 🚀 Launching the OceanIQ React Dashboard
+
+The project now includes a stunning, serverless React dashboard. You do **not** need Node.js or `npm` installed.
+
+To run the interactive UI dashboard:
+```bash
+# Start a simple python webserver inside the frontend folder
+cd frontend
+python -m http.server 8000
+```
+Then open `http://localhost:8000` in your web browser.
+
+---
+
 # 📌 Future Improvements
 
 - Real-time environmental data ingestion
@@ -139,6 +153,3 @@ The platform can be used for:
 - LLM-powered environmental query interface
 
 ---
-
-
-

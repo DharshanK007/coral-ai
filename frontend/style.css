@@ -1,0 +1,80 @@
+/* Animations and Sci-Fi Glowing Components for OceanIQ */
+.glow-card {
+    background: rgba(10, 22, 40, 0.7);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.glow-card:hover {
+    border: 1px solid rgba(45, 212, 191, 0.6);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.2);
+    transform: translateY(-2px);
+}
+
+.glow-text-seafoam {
+    text-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
+}
+
+.glow-text-coral {
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.8);
+}
+
+.glow-text-gold {
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050b14; 
+}
+::-webkit-scrollbar-thumb {
+    background: #0d4f6b; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2dd4bf; 
+}
+
+/* Base Styles applied over Tailwind */
+html { scroll-behavior: smooth; }
+
+/* The Crab Cursor Snapping Animation overrides */
+.crab-icon {
+    transition: transform 0.1s ease;
+}
+.crab-icon.flipped {
+    transform: scaleX(-1);
+}
+@keyframes snapClaws {
+    0% { transform: scale(1) translateY(0); }
+    30% { transform: scale(0.8) translateY(2px); }
+    50% { transform: scale(0.9) translateY(-5px); }
+    70% { transform: scale(0.8) translateY(2px); }
+    100% { transform: scale(1) translateY(0); }
+}
+.crab-icon.snapping {
+    animation: snapClaws 0.3s ease-in-out;
+}
+
+/* Leaflet Dark Map overrides */
+.leaflet-container {
+    background-color: #0a1628 !important;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+.leaflet-popup-content-wrapper {
+    background: rgba(10, 22, 40, 0.9) !important;
+    color: white !important;
+    border: 1px solid #2dd4bf !important;
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.4) !important;
+}
+.leaflet-popup-tip {
+    background: #2dd4bf !important;
+}
