@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OceanIQ - Team Corals</title>
+    <title>OceanIQ Platform</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
@@ -28,23 +28,7 @@
     </script>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- React & ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel (Compiles JSX in browser) -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Recharts Dependencies -->
-    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
-    <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
-    
-    <!-- React Leaflet Dependencies -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- Heroicons Alternative (using standard SVGs in components for speed) -->
+    <link rel="stylesheet" href="/style.css" />
 </head>
 <body class="bg-ocean-navy text-white min-h-screen w-full overflow-x-hidden m-0 p-0 font-sans relative">
     
@@ -72,12 +56,7 @@
 
     <!-- React Mount Point -->
     <div id="root" class="relative z-10"></div>
-    
-    <script>console.log("Loading Babel App...");</script>
-    <!-- Load our React App -->
-    <script type="text/babel" src="data.js"></script>
-    <script type="text/babel" src="app.js"></script>
-    <script type="text/babel">console.log("Babel Compilation Finished!");</script>
+    <script type="module" src="/src/main.jsx"></script>
 
     <!-- Cursor Logic -->
     <script>
