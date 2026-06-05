@@ -146,7 +146,7 @@ class CopernicusFetcher:
                 minimum_latitude=lat_min,   maximum_latitude=lat_max,
                 start_datetime=f"{start_date}T00:00:00",
                 end_datetime=f"{end_date}T23:59:59",
-                minimum_depth=0.0,          maximum_depth=depth_max,
+                minimum_depth=0.495,          maximum_depth=depth_max,
             )
             if "depth" in ds.dims:
                 ds = ds.isel(depth=0, drop=True)
@@ -198,7 +198,7 @@ class CopernicusFetcher:
                 minimum_latitude=lat_min,   maximum_latitude=lat_max,
                 start_datetime=f"{start_date}T00:00:00",
                 end_datetime=f"{end_date}T23:59:59",
-                minimum_depth=0.0,          maximum_depth=depth_max,
+                minimum_depth=0.495,          maximum_depth=depth_max,
                 username=COPERNICUS_USER,   password=COPERNICUS_PASS,
             )
             if "depth" in ds.dims:
@@ -235,7 +235,7 @@ class CopernicusFetcher:
                     minimum_latitude=lat_min,   maximum_latitude=lat_max,
                     start_datetime=f"{start_date}T00:00:00",
                     end_datetime=f"{end_date}T23:59:59",
-                    minimum_depth=0.0,          maximum_depth=depth_max,
+                    minimum_depth=0.495,          maximum_depth=depth_max,
                     **kw,
                 )
                 if "depth" in ds_bgc.dims:

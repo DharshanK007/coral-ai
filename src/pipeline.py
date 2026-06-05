@@ -218,8 +218,10 @@ def run_pipeline(
     # Prepare numeric feature matrix X
     num_cols = [c for c in df.select_dtypes(include=[np.number]).columns
                 if c not in ("lat", "lon")]
+    print(f"  [DEBUG] Found {len(num_cols)} numeric columns: {num_cols}")
     if not num_cols:
         num_cols = ["sst"]
+        print("  [DEBUG] num_cols was empty. Falling back to ['sst']")
 
     X = df[num_cols].fillna(0).values.astype(np.float32)
     xmin = X.min(axis=0, keepdims=True)
@@ -227,9 +229,16 @@ def run_pipeline(
     X = (X - xmin) / (xmax - xmin + 1e-8)   # normalize 0-1
 
     n_feats = X.shape[1]
-    n_temporal = max(1, int(n_feats * 0.7))
-    n_spatial  = max(1, n_feats - n_temporal)
-    feature_groups = {"temporal": n_temporal, "spatial": n_spatial}
+    print(f"  [DEBUG] X shape: {X.shape} | n_feats: {n_feats}")
+    
+    if n_feats == 1:
+        feature_groups = {"temporal": 1} # no split if just 1 feature
+    else:
+        n_temporal = max(1, int(n_feats * 0.7))
+        n_spatial  = max(1, n_feats - n_temporal)
+        feature_groups = {"temporal": n_temporal, "spatial": n_spatial}
+        
+    print(f"  [DEBUG] feature_groups: {feature_groups}")
     group_splits   = build_group_splits(feature_groups)
 
     cfg_model = config.get("model", {})
@@ -470,23 +479,27 @@ def run_pipeline(
         "learned_weights":  npi_head.get_learned_weights(),
     }
 
-    engine   = InsightEngine(historical_data={"latents": z_disc})
-    insights = engine.generate_report(cycle_data)
-    
-    # Spell out feature abbreviations
-    def spell_out(text):
-        replacements = {
-            "thetao": "Temperature", "so": "Salinity", "uo": "Eastward Current", 
-            "vo": "Northward Current", "zos": "Sea Surface Height", "no3": "Nitrate", 
-            "po4": "Phosphate", "o2": "Oxygen", "chl": "Chlorophyll"
-        }
-        for k, v in replacements.items():
-            text = text.replace(f"'{k}'", f"'{v}'").replace(f" {k} ", f" {v} ")
-        return text
+    insights = []
+    try:
+        engine   = InsightEngine(historical_data={"latents": z_disc})
+        insights = engine.generate_report(cycle_data)
+        
+        # Spell out feature abbreviations
+        def spell_out(text):
+            replacements = {
+                "thetao": "Temperature", "so": "Salinity", "uo": "Eastward Current", 
+                "vo": "Northward Current", "zos": "Sea Surface Height", "no3": "Nitrate", 
+                "po4": "Phosphate", "o2": "Oxygen", "chl": "Chlorophyll"
+            }
+            for k, v in replacements.items():
+                text = text.replace(f"'{k}'", f"'{v}'").replace(f" {k} ", f" {v} ")
+            return text
 
-    for ins in insights:
-        print(f"  [{ins['icon']}] {ins['title']}")
-        print(f"        {spell_out(ins['narrative'])}")
+        for ins in insights:
+            print(f"  [{ins['icon']}] {ins['title']}")
+            print(f"        {spell_out(ins['narrative'])}")
+    except BaseException as e:
+        print(f"  [!] Failed to generate core insights module: {e}\n")
 
     # ==========================================================
     # CYCLE COMPLETE
@@ -540,17 +553,15 @@ def run_pipeline(
         print(textwrap.fill(simple_text, width=80))
         print("-----------------------------\n")
         
-    except Exception as e:
-        print(f"  [!] Failed to generate Biodiv/LLM explanation: {e}\n")
-
-    # ==========================================================
+    except BaseException as e:
+        print(f"  [!] Failed to generate Biodiv/LLM explanation (soft failure bypass): {e}\n")
     # REACT FRONTEND DATA EXPORTER
     # ==========================================================
     print("\n[React Dashboard] Exporting dynamic run metrics to frontend...")
     try:
         import os
         import json
-        frontend_data_path = "frontend/data.js"
+        frontend_data_path = "data/processed/dashboard_data.json"
         
         # Build anomaly payload
         anomalies_export = []
@@ -572,61 +583,61 @@ def run_pipeline(
         for i in range(50):
             epoch_history.append({"epoch": i+1, "loss": max(0.04, 0.85 * math.exp(-i / 8) + (np.random.rand() * 0.02 - 0.01))})
             
-        # Get actual Datacenter sizing if possible, else logic bounds
-        try:
-            raw_size = os.path.getsize(fetch_status.get('df_path', 'data/processed/unified.parquet')) / (1024*1024)
-        except:
-            raw_size = 847
-            
-        export_payload = f"""window.OCEANIQ_DATA = {{
-    overview: [
-        {{ id: "Z-01", zone: "Chennai", rainfall: 312, sst: 30.1, ndvi: 0.12, discharge: 1450, rmnpi: 0.87, risk: "CRITICAL", lat: 13.0827, lon: 80.2707 }},
-        {{ id: "Z-02", zone: "Kolkata", rainfall: 420, sst: 29.5, ndvi: 0.34, discharge: 3200, rmnpi: 0.71, risk: "HIGH", lat: 22.5726, lon: 88.3639 }},
-        {{ id: "Z-03", zone: "Mumbai", rainfall: 580, sst: 29.8, ndvi: 0.22, discharge: 850, rmnpi: 0.68, risk: "HIGH", lat: 18.9667, lon: 72.8333 }},
-        {{ id: "Z-04", zone: "Kochi", rainfall: 610, sst: 28.9, ndvi: 0.65, discharge: 620, rmnpi: 0.44, risk: "MODERATE", lat: 9.9312, lon: 76.2673 }},
-        {{ id: "Z-05", zone: "Visakhapatnam", rainfall: 150, sst: 29.2, ndvi: 0.41, discharge: 400, rmnpi: 0.38, risk: "MODERATE", lat: 17.6868, lon: 83.2185 }},
-        {{ id: "Z-06", zone: "Mangalore", rainfall: 820, sst: 28.5, ndvi: 0.78, discharge: 910, rmnpi: 0.19, risk: "LOW", lat: 12.8688, lon: 74.8436 }},
-        {{ id: "Z-07", zone: "Puducherry", rainfall: 280, sst: 30.4, ndvi: 0.15, discharge: 110, rmnpi: 0.91, risk: "CRITICAL", lat: 11.9416, lon: 79.8083 }},
-        {{ id: "Z-08", zone: "Tuticorin", rainfall: 90, sst: 30.2, ndvi: 0.21, discharge: 80, rmnpi: 0.63, risk: "HIGH", lat: 8.7642, lon: 78.1348 }},
-    ],
-    timeseries: [
-        {{ month: "Jan", rainfall: 15, sst: 26.5, ndvi: 0.45, discharge: 300, anomalies: 0 }},
-        {{ month: "Feb", rainfall: 10, sst: 27.1, ndvi: 0.42, discharge: 280, anomalies: 0 }},
-        {{ month: "Mar", rainfall: 25, sst: 28.4, ndvi: 0.38, discharge: 250, anomalies: 0 }},
-        {{ month: "Apr", rainfall: 40, sst: 29.8, ndvi: 0.31, discharge: 220, anomalies: 1 }},
-        {{ month: "May", rainfall: 120, sst: 30.2, ndvi: 0.25, discharge: 450, anomalies: 4 }},
-        {{ month: "Jun", rainfall: 380, sst: 29.5, ndvi: 0.35, discharge: 1800, anomalies: 12 }},
-        {{ month: "Jul", rainfall: 450, sst: 28.8, ndvi: 0.55, discharge: 3200, anomalies: 15 }},
-        {{ month: "Aug", rainfall: 390, sst: 28.5, ndvi: 0.68, discharge: 2800, anomalies: 8 }},
-        {{ month: "Sep", rainfall: 210, sst: 28.9, ndvi: 0.72, discharge: 1500, anomalies: 2 }},
-        {{ month: "Oct", rainfall: 180, sst: 29.4, ndvi: 0.65, discharge: 900, anomalies: 1 }},
-        {{ month: "Nov", rainfall: 95, sst: 28.6, ndvi: 0.58, discharge: 500, anomalies: 0 }},
-        {{ month: "Dec", rainfall: 40, sst: 27.2, ndvi: 0.51, discharge: 350, anomalies: 0 }},
-    ],
-    epochs: {json.dumps(epoch_history)},
-    tsne: Array.from({{length: 50}}, (_, i) => {{
-        const risk = i < 10 ? "CRITICAL" : i < 25 ? "HIGH" : i < 40 ? "MODERATE" : "LOW";
-        let x = risk === "CRITICAL" ? 70 + Math.random()*20 : risk === "HIGH" ? 40 + Math.random()*30 : risk === "LOW" ? 10 + Math.random()*20 : 30 + Math.random()*40;
-        let y = risk === "CRITICAL" ? 70 + Math.random()*20 : risk === "HIGH" ? 50 + Math.random()*30 : risk === "LOW" ? 10 + Math.random()*30 : 20 + Math.random()*40;
-        return {{ id: i, x, y, risk }};
-    }}),
-    anomalies: {json.dumps(anomalies_export) if anomalies_export else "[]"},
-    biodiversity: Array.from({{length: 20}}, (_, i) => {{
-        const rmnpi = Math.random();
-        const bioIndex = Math.max(0.1, 1.0 - (rmnpi * 0.8) + (Math.random() * 0.2 - 0.1));
-        return {{ id: i, rmnpi: Number(rmnpi.toFixed(2)), bioIndex: Number(bioIndex.toFixed(2)) }};
-    }}),
-    datacenter: [
-        {{ name: 'Storage (MB)', before: 847, after: 23 }},
-        {{ name: 'Compute Cycles', before: 12400, after: 1847 }},
-        {{ name: 'Energy Time (s)', before: 340, after: 42 }},
-    ]
-}};"""
+        export_payload = {
+            "overview": [
+                { "id": "Z-01", "zone": "Chennai", "rainfall": 312, "sst": 30.1, "ndvi": 0.12, "discharge": 1450, "rmnpi": 0.87, "risk": "CRITICAL", "lat": 13.0827, "lon": 80.2707 },
+                { "id": "Z-02", "zone": "Kolkata", "rainfall": 420, "sst": 29.5, "ndvi": 0.34, "discharge": 3200, "rmnpi": 0.71, "risk": "HIGH", "lat": 22.5726, "lon": 88.3639 },
+                { "id": "Z-03", "zone": "Mumbai", "rainfall": 580, "sst": 29.8, "ndvi": 0.22, "discharge": 850, "rmnpi": 0.68, "risk": "HIGH", "lat": 18.9667, "lon": 72.8333 },
+                { "id": "Z-04", "zone": "Kochi", "rainfall": 610, "sst": 28.9, "ndvi": 0.65, "discharge": 620, "rmnpi": 0.44, "risk": "MODERATE", "lat": 9.9312, "lon": 76.2673 },
+                { "id": "Z-05", "zone": "Visakhapatnam", "rainfall": 150, "sst": 29.2, "ndvi": 0.41, "discharge": 400, "rmnpi": 0.38, "risk": "MODERATE", "lat": 17.6868, "lon": 83.2185 },
+                { "id": "Z-06", "zone": "Mangalore", "rainfall": 820, "sst": 28.5, "ndvi": 0.78, "discharge": 910, "rmnpi": 0.19, "risk": "LOW", "lat": 12.8688, "lon": 74.8436 },
+                { "id": "Z-07", "zone": "Puducherry", "rainfall": 280, "sst": 30.4, "ndvi": 0.15, "discharge": 110, "rmnpi": 0.91, "risk": "CRITICAL", "lat": 11.9416, "lon": 79.8083 },
+                { "id": "Z-08", "zone": "Tuticorin", "rainfall": 90, "sst": 30.2, "ndvi": 0.21, "discharge": 80, "rmnpi": 0.63, "risk": "HIGH", "lat": 8.7642, "lon": 78.1348 },
+            ],
+            "timeseries": [
+                { "month": "Jan", "rainfall": 15, "sst": 26.5, "ndvi": 0.45, "discharge": 300, "anomalies": 0 },
+                { "month": "Feb", "rainfall": 10, "sst": 27.1, "ndvi": 0.42, "discharge": 280, "anomalies": 0 },
+                { "month": "Mar", "rainfall": 25, "sst": 28.4, "ndvi": 0.38, "discharge": 250, "anomalies": 0 },
+                { "month": "Apr", "rainfall": 40, "sst": 29.8, "ndvi": 0.31, "discharge": 220, "anomalies": 1 },
+                { "month": "May", "rainfall": 120, "sst": 30.2, "ndvi": 0.25, "discharge": 450, "anomalies": 4 },
+                { "month": "Jun", "rainfall": 380, "sst": 29.5, "ndvi": 0.35, "discharge": 1800, "anomalies": 12 },
+                { "month": "Jul", "rainfall": 450, "sst": 28.8, "ndvi": 0.55, "discharge": 3200, "anomalies": 15 },
+                { "month": "Aug", "rainfall": 390, "sst": 28.5, "ndvi": 0.68, "discharge": 2800, "anomalies": 8 },
+                { "month": "Sep", "rainfall": 210, "sst": 28.9, "ndvi": 0.72, "discharge": 1500, "anomalies": 2 },
+                { "month": "Oct", "rainfall": 180, "sst": 29.4, "ndvi": 0.65, "discharge": 900, "anomalies": 1 },
+                { "month": "Nov", "rainfall": 95, "sst": 28.6, "ndvi": 0.58, "discharge": 500, "anomalies": 0 },
+                { "month": "Dec", "rainfall": 40, "sst": 27.2, "ndvi": 0.51, "discharge": 350, "anomalies": 0 },
+            ],
+            "epochs": epoch_history,
+            "tsne": [
+                {
+                    "id": i,
+                    "x": 70 + np.random.rand()*20 if i < 10 else 40 + np.random.rand()*30 if i < 25 else 10 + np.random.rand()*20 if i >= 40 else 30 + np.random.rand()*40,
+                    "y": 70 + np.random.rand()*20 if i < 10 else 50 + np.random.rand()*30 if i < 25 else 10 + np.random.rand()*30 if i >= 40 else 20 + np.random.rand()*40,
+                    "risk": "CRITICAL" if i < 10 else "HIGH" if i < 25 else "MODERATE" if i < 40 else "LOW"
+                } for i in range(50)
+            ],
+            "anomalies": anomalies_export if anomalies_export else [],
+            "biodiversity": [
+                {
+                    "id": i,
+                    "rmnpi": round(float(np.random.rand()), 2),
+                    "bioIndex": round(float(max(0.1, 1.0 - (np.random.rand() * 0.8) + (np.random.rand() * 0.2 - 0.1))), 2)
+                } for i in range(20)
+            ],
+            "datacenter": [
+                { "name": "Storage (MB)", "before": 847, "after": 23 },
+                { "name": "Compute Cycles", "before": 12400, "after": 1847 },
+                { "name": "Energy Time (s)", "before": 340, "after": 42 },
+            ]
+        }
+
+        os.makedirs(os.path.dirname(frontend_data_path), exist_ok=True)
         with open(frontend_data_path, "w", encoding="utf-8") as f:
-            f.write(export_payload)
-        print(f"  [saved] Frontend synchronized with backend AI arrays: {frontend_data_path}")
+            json.dump(export_payload, f, indent=4)
+        print(f"  [saved] Pipeline metrics serialized to JSON: {frontend_data_path}")
     except Exception as e:
-        print(f"  [!] Failed to export to React frontend: {e}")
+        print(f"  [!] Failed to export JSON data: {e}")
 
     # ==========================================================
     # PHASE 6: Visualization

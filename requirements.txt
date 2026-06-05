@@ -1,7 +1,6 @@
 # AI-Driven Unified Data Platform for Oceanographic & Biodiversity Insights
 # Core
-torch>=2.0.0
-numpy>=1.24.0
+numpy>=1.24.0,<2.0.0
 pandas>=2.0.0
 scipy>=1.10.0
 
@@ -45,5 +44,4 @@ requests>=2.31.0              # HTTP client for ERDDAP/CHIRPS
 # earthaccess>=0.8.0
 
 # Copernicus Marine Service (optional, needs credentials)
-# Install manually: pip install copernicusmarine
-# copernicusmarine>=1.0.0
+copernicusmarine>=1.0.0
