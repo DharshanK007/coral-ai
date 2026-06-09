@@ -1,4 +1,4 @@
-# 🌊 Coral
+# 🪸 𝙲Ö𝚁Â𝙻
 ## AI-Driven Unified Data Platform for Oceanographic & Biodiversity Insights
 
 An AI-powered platform that integrates multiple environmental datasets to analyze ocean conditions, detect ecological anomalies, and identify marine risk zones.
