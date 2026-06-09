@@ -37,8 +37,8 @@ Where:
 
 Weights (w₁–w₄) are **learnable parameters** refined during autoencoder 
 training via the 5-term hybrid loss. Initial values are configurable 
-in `config/settings.yamRM-NPI = exp( w₁·log(Q) + w₂·log(N) + w₃·log(S) + w₄·log(D) )
-= Q^w₁ · N^w₂ · S^w₃ · D^w₄l`.
+in 
+## RM-NPI = exp( w₁·log(Q) + w₂·log(N) + w₃·log(S) + w₄·log(D) ) = Q^w₁ · N^w₂ · S^w₃ · D^w₄
 
 | Threshold | Classification |
 |-----------|---------------|
