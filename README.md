@@ -35,10 +35,7 @@ Where:
 | S | Seasonal intensity factor |
 | D | Distance decay from river mouth |
 
-Weights (w₁–w₄) are **learnable parameters** refined during autoencoder 
-training via the 5-term hybrid loss. Initial values are configurable 
-in 
-## RM-NPI = exp( w₁·log(Q) + w₂·log(N) + w₃·log(S) + w₄·log(D) ) = Q^w₁ · N^w₂ · S^w₃ · D^w₄
+
 
 | Threshold | Classification |
 |-----------|---------------|
@@ -142,39 +139,7 @@ The platform can be used for:
 - ML/DL (Autoencoders)
 
 ---
-# 📊 Platform Impact Analysis
 
-## ⚡ Direct Numerical Comparison — With vs Without the Coral-AI Platform
-
-| Metric | Without Platform | With Platform | Improvement |
-|--------|-----------------|---------------|-------------|
-| Time per analysis cycle | 16–26 days | 31–82 minutes | **~280× faster** |
-| Annual analyst time | ~192 working days | ~16 hours | **99.6% reduction** |
-| Cost per cycle | $5,100–$8,400 | $3.65–$14.70 | **99.8% cost reduction** |
-| Annual cost | $61,200–$100,800 | $43.80–$176.40 | **Saves ~$61,000–$100,600/yr** |
-| Grid cells analyzed per cycle | ~10,000–50,000 (sampling) | 334,890 (full coverage) | **6.7–33× more coverage** |
-| Data sources integrated | 1–2 (typically SST only) | 4 simultaneous | **4× richer data** |
-| Anomaly detection latency | Days to weeks | Real-time within same cycle | **Near-zero lag** |
-| Biodiversity threats flagged | Reactive — post-event only | Proactive — predictive flagging | **Early warning enabled** |
-| Cycle frequency possible | Bi-monthly at best | Every 6 hours (configurable) | **~120× more frequent** |
-| Novel pattern discovery | Requires new expert hypothesis | Automatic via `z_disc` channel | **Fully automated** |
-
-> **Baseline assumption:** Traditional workflow involves 3–4 domain experts at $50–75/hr manually collecting, aligning, and interpreting oceanographic data across the Indian Ocean region (~334,890 grid cells).
-
----
-
-## 🗄️ Storage & Compute Efficiency — Embedded Optimizations
-
-| Optimization | Mechanism | Quantified Impact |
-|-------------|-----------|-------------------|
-| **OPT-1 — Latent Cache** | Skip re-encoding unchanged grid cells across cycles | ~30–40% encoding compute saved on repeat cycles |
-| **OPT-2 — Selective Reprocessing** | Only reprocess top 20% highest reconstruction-error cells | ~80% reduction in deep analysis workload per cycle |
-| **OPT-3 — Seasonal GPU Pre-Scaling** | Monsoon-aware GPU allocation (3–8 GPUs by month) | Avoids over-provisioning ~60% of the year |
-| **OPT-4 — 8-bit Quantization** | Compress cold-tier latent vectors via straight-through estimator | ~54% storage reduction on cold-tier data |
-| **OPT-5 — Adaptive Tiling** | Coarse spatial resolution applied in low-risk open-ocean zones | ~40–60% reduction in total grid points processed |
-| **OPT-7 — Batch Coalescing** | Group geographically adjacent cells into unified GPU batches | 5–10× GPU throughput improvement per batch |
-
-> Combined, these optimizations reduce infrastructure cost per cycle by an estimated **65–75%** compared to a naive full-resolution, non-cached implementation of equivalent scope.
 
 ### Storage Tier Distribution (per 334,890-cell cycle)
 
@@ -212,6 +177,5 @@ The platform can be used for:
 
 > By replacing a **16–26 day** manual analysis cycle costing **$5,100–$8,400** with a fully automated pipeline completing in under **90 minutes at under $15**, the platform delivers a **~280× acceleration** and **~99.8% cost reduction** per cycle — while expanding spatial coverage to **334,890 grid cells** across **4 integrated data sources**, with monitoring frequency increasing from bi-monthly to **every 6 hours**.
 >
-> At scale, this translates to annual savings of approximately **$61,000–$100,000** in analyst cost alone, while enabling proactive ecological threat detection — including coral bleaching, algal blooms, and food web disruption — that was previously **operationally infeasible** at this resolution and frequency.
-
+> At scale, this translates to annual savings of approximately **$61,000–$100,000** in analyst cost alone, while enabling proactive ecological threat detection — including coral bleaching, algal blooms, and food web disruption — that was previously **operationally infeasible** 
 
