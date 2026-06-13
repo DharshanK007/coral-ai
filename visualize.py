@@ -95,7 +95,7 @@ df["anomaly_score"] = np.abs(df["thetao"] - df["thetao"].mean())/df["thetao"].st
 # ------------------------------------------------------------------
 # PLOT 1: Coastal Nutrient Pollution Risk Map
 # ------------------------------------------------------------------
-print("Generating Plot 1...")
+print("Generating Plot 1 -  Coastal Nutrient Pollution Risk Map")
 fig, ax = plt.subplots(figsize=(10, 6))
 latest_day = df["time"].max()
 snap = df[df["time"] == latest_day].copy()
@@ -124,7 +124,7 @@ save(fig, "plot1_pollution_risk_map.png")
 # ------------------------------------------------------------------
 # PLOT 2: Coastal Pollution Risk Over Time
 # ------------------------------------------------------------------
-print("Generating Plot 2...")
+print("Generating Plot 2 - Coastal Pollution Risk Over Time")
 daily_npi = df.groupby("time")["rm_npi"].mean().reset_index()
 
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -145,7 +145,7 @@ save(fig, "plot2_risk_over_time.png")
 # ------------------------------------------------------------------
 # PLOT 3: Drivers of Coastal Nutrient Pollution
 # ------------------------------------------------------------------
-print("Generating Plot 3...")
+print("Generating Plot 3 -  Drivers of Coastal Nutrient Pollution")
 fig, ax = plt.subplots(figsize=(8, 5))
 
 factors = ["River Discharge (Q)", "Nutrient Load (N)", "Seasonal Intensity (S)", "Distance Decay (D)"]
@@ -169,7 +169,7 @@ save(fig, "plot3_drivers_bar_chart.png")
 # ------------------------------------------------------------------
 # PLOT 4: Environmental Anomaly Detection Timeline
 # ------------------------------------------------------------------
-print("Generating Plot 4...")
+print("Generating Plot 4 - Environmental Anomaly Detection Timeline")
 daily_anomaly = df.groupby("time")["anomaly_score"].mean().reset_index()
 
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -192,7 +192,7 @@ save(fig, "plot4_anomaly_timeline.png")
 # ------------------------------------------------------------------
 # PLOT 5: Environmental Data Coverage Map
 # ------------------------------------------------------------------
-print("Generating Plot 5...")
+print("Generating Plot 5 - Environmental Data Coverage Map")
 import geopandas as gpd
 from matplotlib.patches import Rectangle
 from matplotlib.lines import Line2D
@@ -284,7 +284,7 @@ print(f"  [saved] {path}")
 # ------------------------------------------------------------------
 # PLOT 6: Pollution Impact vs Distance from River Mouth
 # ------------------------------------------------------------------
-print("Generating Plot 6...")
+print("Generating Plot 6 - Pollution Impact vs Distance from River Mouth")
 fig, ax = plt.subplots(figsize=(9, 5))
 
 # Sort distance data to draw a smooth curve
@@ -306,7 +306,7 @@ save(fig, "plot6_distance_decay.png")
 # ------------------------------------------------------------------
 # PLOT 7: Ocean Ecological Risk Zones and Marine Vulnerability Hotspots
 # ------------------------------------------------------------------
-print("Generating Plot 7...")
+print("Generating Plot 7 - Ocean Ecological Risk Zones and Marine Vulnerability Hotspots")
 import matplotlib.colors as mcolors
 import matplotlib.patches as mpatches
 from scipy.interpolate import griddata
@@ -419,4 +419,4 @@ ax.text(0.02, 0.03, info_text, transform=ax.transAxes, fontsize=10,
 
 save(fig, "plot7_ecological_risk_zones.png")
 
-print("\nAll beginner-friendly visualizations generated successfully!")
+print("\nAll visualizations of risk pollution generated successfully by CORAL AI!")
