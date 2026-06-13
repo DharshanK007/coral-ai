@@ -1,4 +1,4 @@
-# Copernicus Diagnostic Script
+# Copernicus Diagnostic Script (Updated June 2026)
 # Runs in isolation to capture the FULL error from copernicusmarine
 # Run with: venv\Scripts\python.exe diagnose_copernicus.py
 
