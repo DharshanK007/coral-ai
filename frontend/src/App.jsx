@@ -31,6 +31,7 @@ const Navbar = () => (
             <a href="#calculator" className="hover:text-white transition">RM-NPI Calc</a>
             <a href="#map" className="hover:text-white transition">Map</a>
             <a href="#ai" className="hover:text-white transition">AI Core</a>
+            <a href="/globe.html" target="_blank" className="text-ocean-coral hover:text-white transition font-bold">🌍 3D Globe</a>
         </div>
         <div><span className="bg-ocean-teal text-white px-3 py-1 rounded text-xs tracking-widest uppercase">Oceanographic Dashboard</span></div>
     </nav>
@@ -388,16 +389,25 @@ const App = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('/api/data')
-            .then(res => {
-                if (!res.ok) throw new Error("Failed to fetch data from API");
-                return res.json();
-            })
-            .then(data => setDb(data))
-            .catch(err => {
-                console.error(err);
-                setError(err.message);
-            });
+        const loadData = () => {
+            fetch('/api/data?t=' + new Date().getTime(), { cache: 'no-store' })
+                .then(res => {
+                    if (!res.ok) throw new Error("Failed to fetch data from API");
+                    return res.json();
+                })
+                .then(data => {
+                    setDb(data);
+                    setError(null);
+                })
+                .catch(err => {
+                    console.error(err);
+                    setError(err.message);
+                });
+        };
+
+        loadData();
+        const interval = setInterval(loadData, 5000);
+        return () => clearInterval(interval);
     }, []);
 
     if (error) {

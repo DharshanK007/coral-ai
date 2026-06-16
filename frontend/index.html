@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OceanIQ Platform</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>CORAL AI Platform</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
+    <!-- Google Fonts: Bioluminescence Theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -28,62 +34,58 @@
     </script>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css?v=4" />
+
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- React Is -->
+    <script crossorigin src="https://unpkg.com/react-is@18/umd/react-is.production.min.js"></script>
+    
+    <!-- Babel (Compiles JSX in browser) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Recharts Dependencies -->
+    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+    <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body class="bg-ocean-navy text-white min-h-screen w-full overflow-x-hidden m-0 p-0 font-sans relative">
     
     <!-- Background Animated Bubbles -->
     <div id="bubble-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
     
-    <!-- Custom Crab Cursor -->
-    <div id="crab-cursor" class="fixed pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 drop-shadow-lg transition-transform duration-75">
-        <svg id="crab-svg" width="40" height="40" viewBox="0 0 100 100" class="crab-icon">
-            <path d="M50 30 C 70 30, 85 45, 85 65 C 85 80, 70 90, 50 90 C 30 90, 15 80, 15 65 C 15 45, 30 30, 50 30 Z" fill="#ff6b6b"/>
-            <!-- Eyes -->
-            <circle cx="40" cy="20" r="5" fill="#ff6b6b"/><circle cx="40" cy="20" r="2" fill="white"/>
-            <circle cx="60" cy="20" r="5" fill="#ff6b6b"/><circle cx="60" cy="20" r="2" fill="white"/>
-            <!-- Legs -->
-            <path d="M15 65 Q 5 75 10 90 M85 65 Q 95 75 90 90 M20 50 Q 5 50 5 65 M80 50 Q 95 50 95 65" stroke="#ff6b6b" stroke-width="4" fill="none"/>
-            <!-- Claws (Animated) -->
-            <g id="left-claw" class="claw origin-bottom-right">
-                <path d="M25 40 Q 10 20 20 10 Q 30 20 25 40 Z" fill="#ff4757"/>
-            </g>
-            <g id="right-claw" class="claw origin-bottom-left">
-                <path d="M75 40 Q 90 20 80 10 Q 70 20 75 40 Z" fill="#ff4757"/>
-            </g>
-        </svg>
-    </div>
 
     <!-- React Mount Point -->
     <div id="root" class="relative z-10"></div>
-    <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Cursor Logic -->
+    
+    <!-- Cache-busted script loader: forces browser to always fetch latest app.js and data.js -->
     <script>
-        const cursor = document.getElementById('crab-cursor');
-        const svg = document.getElementById('crab-svg');
-        let mouseX = 0, mouseY = 0, lastX = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-            
-            // Flip crab horizontally based on movement direction
-            if (mouseX > lastX + 2) { svg.style.transform = 'scaleX(-1)'; }
-            else if (mouseX < lastX - 2) { svg.style.transform = 'scaleX(1)'; }
-            lastX = mouseX;
-        });
+        // Each page load gets a fresh timestamp so the browser NEVER serves a cached copy
+        var _v = new Date().getTime();
+        console.log("Loading CORAL AI scripts with cache-buster v=" + _v);
 
-        document.addEventListener('mousedown', () => { svg.classList.add('snapping'); });
-        document.addEventListener('mouseup', () => { setTimeout(() => svg.classList.remove('snapping'), 150); });
-        
-        // Hide default cursor completely
-        document.body.style.cursor = 'none';
-        document.querySelectorAll('*').forEach(el => el.style.cursor = 'none');
-        
-        // Generative Background Bubbles
+        // Inject data.js with cache-buster
+        var dataScript = document.createElement('script');
+        dataScript.src = '/data.js?v=' + _v;
+        document.head.appendChild(dataScript);
+
+        // After data.js loads, inject app.js (Babel type) with cache-buster
+        dataScript.onload = function() {
+            var appScript = document.createElement('script');
+            appScript.type = 'text/babel';
+            appScript.dataset.type = 'module';
+            appScript.src = '/app.js?v=' + _v;
+            document.body.appendChild(appScript);
+            console.log("CORAL AI scripts injected — cache-buster: v=" + _v);
+        };
+    </script>
+
+    <!-- Generative Background Bubbles -->
+    <script>
         const container = document.getElementById('bubble-container');
         for(let i=0; i<30; i++) {
             let b = document.createElement('div');
@@ -96,6 +98,45 @@
             b.style.animationDelay = Math.random() * 5 + 's';
             container.appendChild(b);
         }
+    </script>
+
+    <!-- ═══ DECORATIVE: Bioluminescent Particles & Ambient Effects ═══ -->
+    <script>
+    (function() {
+        // Bioluminescent particle field
+        var pc = document.createElement('div');
+        pc.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden';
+        for (var i = 0; i < 50; i++) {
+            var p = document.createElement('div');
+            var size = Math.random() * 4 + 2;
+            var x = Math.random() * 100;
+            var y = Math.random() * 100;
+            var delay = Math.random() * 12;
+            var duration = Math.random() * 14 + 8;
+            var opacity = Math.random() * 0.18 + 0.05;
+            var color = Math.random() > 0.3
+                ? 'rgba(0,245,196,' + opacity + ')'
+                : 'rgba(0,180,255,' + opacity + ')';
+            p.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;'
+                + 'border-radius:50%;background:' + color + ';left:' + x + '%;top:' + y + '%;'
+                + 'box-shadow:0 0 ' + (size * 3) + 'px ' + color + ';'
+                + 'animation:particleFloat ' + duration + 's ease-in-out ' + delay + 's infinite alternate;';
+            pc.appendChild(p);
+        }
+        document.body.appendChild(pc);
+
+        // Ambient blobs
+        ['1','2'].forEach(function(i) {
+            var b = document.createElement('div');
+            b.className = 'bio-ambient-blob bio-ambient-blob-' + i;
+            document.body.insertBefore(b, document.body.firstChild);
+        });
+
+        // Bioluminescent tide
+        var tide = document.createElement('div');
+        tide.className = 'bio-ocean-tide';
+        document.body.appendChild(tide);
+    })();
     </script>
 </body>
 </html>

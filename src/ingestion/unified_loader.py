@@ -1,7 +1,9 @@
 # Unified Data Loader -- Copernicus as primary source, OpenMeteo as rainfall supplement
 import os
+# pyrefly: ignore [missing-import]
 import xarray as xr
 import pandas as pd
+# pyrefly: ignore [missing-import]
 import numpy as np
 from datetime import datetime
 from pathlib import Path
@@ -127,8 +129,8 @@ class UnifiedLoader:
 
             dfs.append(df_cop)
             print(f"\n  [Copernicus Data Processed]")
-            print(f"  ↳ Successfully aligned {len(df_cop):,} ocean measurements.")
-            print("  ↳ Features Extracted:")
+            print(f"  -> Successfully aligned {len(df_cop):,} ocean measurements.")
+            print("  -> Features Extracted:")
             print("     - Physical: Temperature (thetao), Salinity (so), Ocean Currents (uo, vo), Sea Surface Height (zos)")
             print("     - Biological: Nitrate (no3), Phosphate (po4), Oxygen (o2), Chlorophyll (chl)")
             print("     - Derived Formulas: Current Speed, Nutrient Proxies")
@@ -152,11 +154,13 @@ class UnifiedLoader:
         for df in dfs[1:]:
             merged = merged.merge(df, on=["time", "lat", "lon"], how="left")
 
-        # Interpolate missing values
+        # Interpolate missing values strictly over TIME (not space) to prevent ocean data spilling onto land
         merged = merged.sort_values(["lat", "lon", "time"])
         num_cols = merged.select_dtypes(include=[np.number]).columns
-        merged[num_cols] = merged[num_cols].interpolate(method="linear")
-        merged = merged.dropna(subset=num_cols, how="all")
+        # Group by coordinates so completely NaN land pixels remain NaN
+        merged[num_cols] = merged.groupby(["lat", "lon"])[num_cols].transform(lambda x: x.interpolate(method="linear", limit_direction="both"))
+        # Drop rows where Copernicus temperature is NaN (i.e. strictly land cells)
+        merged = merged.dropna(subset=["thetao"], how="all")
 
         # Save
         out = self.output_dir / "unified.parquet"
