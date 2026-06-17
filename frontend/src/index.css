@@ -39,11 +39,6 @@
   text-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
 }
 
-/* Hide default cursor completely to prioritize crab cursor */
-* {
-  cursor: none !important;
-}
-
 /* The Crab Cursor */
 #custom-cursor {
   position: fixed;

@@ -5,6 +5,7 @@ const { LineChart, Line, BarChart, Bar, ScatterChart, Scatter, XAxis, YAxis,
         CartesianGrid, Tooltip, Legend, ResponsiveContainer, ZAxis, Cell } = window.Recharts;
 
 let db = window.OCEANIQ_DATA;
+if (!db) console.error("OCEANIQ_DATA is undefined! data.js failed to load.");
 
 // ── Utility Helpers ────────────────────────────────────
 const MONTH_NUMS = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12 };
@@ -1109,9 +1110,15 @@ const App = () => {
 
 console.log("Mounting CORAL AI Dashboard v2...");
 try {
-    const root = ReactDOM.createRoot(document.getElementById("root"));
+    const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<App />);
-    console.log("CORAL AI Dashboard v2 rendered successfully.");
-} catch (e) {
-    console.error("CRITICAL RENDER ERROR:", e);
+} catch (err) {
+    console.error("DASHBOARD CRASH:", err);
+    document.getElementById('root').innerHTML = `
+        <div style="position:fixed;top:20%;left:10%;right:10%;background:rgba(255,0,0,0.8);color:white;padding:30px;border-radius:10px;z-index:99999;font-family:monospace;">
+            <h1 style="font-size:30px;margin-bottom:15px">🚨 DASHBOARD CRASH 🚨</h1>
+            <p style="font-size:20px">${err.name}: ${err.message}</p>
+            <p style="margin-top:20px">Please take a screenshot of this red box and show it to CORAL AI.</p>
+        </div>
+    `;
 }

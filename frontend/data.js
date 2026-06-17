@@ -4,10 +4,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-01",
             "zone": "Chennai",
             "river": "Kosasthalaiyar,Cooum & Adyar",
-            "rainfall": 268.0,
+            "rainfall": 286.0,
             "sst": 26.7,
-            "ndvi": 0.56,
-            "discharge": 1197.0,
+            "ndvi": 0.53,
+            "discharge": 1314.0,
             "rmnpi": 0.34,
             "risk": "LOW",
             "lat": 13.0827,
@@ -17,10 +17,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-02",
             "zone": "Ganges Delta (Kolkata)",
             "river": "Ganges & Brahmaputra",
-            "rainfall": 567.0,
+            "rainfall": 575.0,
             "sst": 24.86,
-            "ndvi": 0.55,
-            "discharge": 2560.0,
+            "ndvi": 0.25,
+            "discharge": 2698.0,
             "rmnpi": 0.65,
             "risk": "HIGH",
             "lat": 22.5726,
@@ -30,10 +30,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-03",
             "zone": "Mumbai",
             "river": "Ulhas",
-            "rainfall": 432.0,
+            "rainfall": 385.0,
             "sst": 25.12,
             "ndvi": 0.21,
-            "discharge": 1997.0,
+            "discharge": 1769.0,
             "rmnpi": 0.45,
             "risk": "MODERATE",
             "lat": 18.9667,
@@ -43,10 +43,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-04",
             "zone": "Kochi",
             "river": "Periyar",
-            "rainfall": 314.0,
+            "rainfall": 566.0,
             "sst": 28.92,
-            "ndvi": 0.38,
-            "discharge": 1563.0,
+            "ndvi": 0.48,
+            "discharge": 2632.0,
             "rmnpi": 0.09,
             "risk": "LOW",
             "lat": 9.9312,
@@ -56,10 +56,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-05",
             "zone": "Visakhapatnam",
             "river": "Sarada,Narvagedda & Meghadri",
-            "rainfall": 448.0,
+            "rainfall": 567.0,
             "sst": 25.65,
-            "ndvi": 0.54,
-            "discharge": 2175.0,
+            "ndvi": 0.36,
+            "discharge": 2639.0,
             "rmnpi": 0.55,
             "risk": "MODERATE",
             "lat": 17.6868,
@@ -69,10 +69,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-06",
             "zone": "Mangalore",
             "river": "Netravathi & Gurupura",
-            "rainfall": 191.0,
+            "rainfall": 529.0,
             "sst": 29.26,
-            "ndvi": 0.4,
-            "discharge": 1016.0,
+            "ndvi": 0.39,
+            "discharge": 2411.0,
             "rmnpi": 0.07,
             "risk": "LOW",
             "lat": 12.8688,
@@ -82,10 +82,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-07",
             "zone": "Nagapattinam",
             "river": "Kaveri",
-            "rainfall": 556.0,
+            "rainfall": 419.0,
             "sst": 26.81,
-            "ndvi": 0.22,
-            "discharge": 2585.0,
+            "ndvi": 0.51,
+            "discharge": 1932.0,
             "rmnpi": 0.62,
             "risk": "HIGH",
             "lat": 10.7672,
@@ -95,10 +95,10 @@ window.OCEANIQ_DATA = {
             "id": "Z-08",
             "zone": "Tuticorin",
             "river": "Thamirabarani",
-            "rainfall": 227.0,
+            "rainfall": 173.0,
             "sst": 27.48,
-            "ndvi": 0.33,
-            "discharge": 1174.0,
+            "ndvi": 0.45,
+            "discharge": 915.0,
             "rmnpi": 0.31,
             "risk": "LOW",
             "lat": 8.7642,
@@ -112,7 +112,7 @@ window.OCEANIQ_DATA = {
             "lon": 82.25,
             "rmnpi": 1.0,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.19,
             "recon_error": 0.0
         },
         {
@@ -121,7 +121,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.5,
             "rmnpi": 0.9702,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 32.03,
             "recon_error": 0.0
         },
         {
@@ -130,7 +130,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.75,
             "rmnpi": 0.9639,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 32.04,
             "recon_error": 0.0
         },
         {
@@ -139,34 +139,34 @@ window.OCEANIQ_DATA = {
             "lon": 85.0,
             "rmnpi": 0.9168,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.43,
             "recon_error": 0.0
         },
         {
             "rank": 5,
             "lat": 19.0,
             "lon": 85.0,
-            "rmnpi": 0.8593,
+            "rmnpi": 0.8512,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.69,
             "recon_error": 0.0
         },
         {
             "rank": 6,
             "lat": 15.5,
             "lon": 80.25,
-            "rmnpi": 0.8464,
+            "rmnpi": 0.8463,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.72,
             "recon_error": 0.0
         },
         {
             "rank": 7,
             "lat": 16.25,
             "lon": 82.0,
-            "rmnpi": 0.8441,
+            "rmnpi": 0.844,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.41,
             "recon_error": 0.0
         },
         {
@@ -175,16 +175,16 @@ window.OCEANIQ_DATA = {
             "lon": 84.75,
             "rmnpi": 0.8425,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.59,
             "recon_error": 0.0
         },
         {
             "rank": 9,
             "lat": 16.75,
             "lon": 82.5,
-            "rmnpi": 0.8383,
+            "rmnpi": 0.8382,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.81,
             "recon_error": 0.0
         },
         {
@@ -193,7 +193,7 @@ window.OCEANIQ_DATA = {
             "lon": 82.5,
             "rmnpi": 0.8363,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.03,
             "recon_error": 0.0
         },
         {
@@ -202,16 +202,16 @@ window.OCEANIQ_DATA = {
             "lon": 82.25,
             "rmnpi": 0.8325,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.14,
             "recon_error": 0.0
         },
         {
             "rank": 12,
             "lat": 18.75,
             "lon": 84.75,
-            "rmnpi": 0.829,
+            "rmnpi": 0.8289,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.74,
             "recon_error": 0.0
         },
         {
@@ -220,7 +220,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.75,
             "rmnpi": 0.8203,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.51,
             "recon_error": 0.0
         },
         {
@@ -229,7 +229,7 @@ window.OCEANIQ_DATA = {
             "lon": 81.75,
             "rmnpi": 0.8192,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 31.61,
             "recon_error": 0.0
         },
         {
@@ -238,7 +238,7 @@ window.OCEANIQ_DATA = {
             "lon": 84.5,
             "rmnpi": 0.8166,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.73,
             "recon_error": 0.0
         },
         {
@@ -247,7 +247,7 @@ window.OCEANIQ_DATA = {
             "lon": 82.5,
             "rmnpi": 0.8055,
             "risk": "CRITICAL",
-            "sst": 28.5,
+            "sst": 30.79,
             "recon_error": 0.0
         },
         {
@@ -256,7 +256,7 @@ window.OCEANIQ_DATA = {
             "lon": 84.75,
             "rmnpi": 0.7983,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.99,
             "recon_error": 0.0
         },
         {
@@ -265,7 +265,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.75,
             "rmnpi": 0.797,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.51,
             "recon_error": 0.0
         },
         {
@@ -274,16 +274,16 @@ window.OCEANIQ_DATA = {
             "lon": 80.75,
             "rmnpi": 0.7928,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.11,
             "recon_error": 0.0
         },
         {
             "rank": 20,
             "lat": 15.5,
             "lon": 80.5,
-            "rmnpi": 0.7874,
+            "rmnpi": 0.7873,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.35,
             "recon_error": 0.0
         },
         {
@@ -292,7 +292,7 @@ window.OCEANIQ_DATA = {
             "lon": 84.25,
             "rmnpi": 0.7773,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.8,
             "recon_error": 0.0
         },
         {
@@ -301,7 +301,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.75,
             "rmnpi": 0.7701,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.51,
             "recon_error": 0.0
         },
         {
@@ -310,7 +310,7 @@ window.OCEANIQ_DATA = {
             "lon": 83.75,
             "rmnpi": 0.7682,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.69,
             "recon_error": 0.0
         },
         {
@@ -319,133 +319,133 @@ window.OCEANIQ_DATA = {
             "lon": 81.5,
             "rmnpi": 0.7674,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.84,
             "recon_error": 0.0
         },
         {
             "rank": 25,
-            "lat": 18.75,
-            "lon": 85.0,
-            "rmnpi": 0.7626,
+            "lat": 11.0,
+            "lon": 80.0,
+            "rmnpi": 0.7629,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.33,
             "recon_error": 0.0
         },
         {
             "rank": 26,
-            "lat": 17.75,
-            "lon": 83.5,
+            "lat": 18.75,
+            "lon": 85.0,
             "rmnpi": 0.7625,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.98,
             "recon_error": 0.0
         },
         {
             "rank": 27,
-            "lat": 20.0,
-            "lon": 72.0,
-            "rmnpi": 0.7612,
+            "lat": 17.75,
+            "lon": 83.5,
+            "rmnpi": 0.7625,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.67,
             "recon_error": 0.0
         },
         {
             "rank": 28,
-            "lat": 19.5,
-            "lon": 72.5,
-            "rmnpi": 0.7611,
+            "lat": 20.0,
+            "lon": 72.0,
+            "rmnpi": 0.7612,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.82,
             "recon_error": 0.0
         },
         {
             "rank": 29,
-            "lat": 19.75,
+            "lat": 19.5,
             "lon": 72.5,
-            "rmnpi": 0.7591,
+            "rmnpi": 0.7611,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.23,
             "recon_error": 0.0
         },
         {
             "rank": 30,
-            "lat": 17.25,
-            "lon": 82.75,
-            "rmnpi": 0.7567,
+            "lat": 19.75,
+            "lon": 72.5,
+            "rmnpi": 0.7591,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.2,
             "recon_error": 0.0
         },
         {
             "rank": 31,
-            "lat": 18.5,
-            "lon": 85.0,
-            "rmnpi": 0.7535,
+            "lat": 17.25,
+            "lon": 82.75,
+            "rmnpi": 0.7567,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.83,
             "recon_error": 0.0
         },
         {
             "rank": 32,
-            "lat": 17.0,
-            "lon": 82.75,
-            "rmnpi": 0.7528,
+            "lat": 18.5,
+            "lon": 85.0,
+            "rmnpi": 0.7535,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.14,
             "recon_error": 0.0
         },
         {
             "rank": 33,
-            "lat": 20.0,
-            "lon": 72.5,
+            "lat": 17.0,
+            "lon": 82.75,
             "rmnpi": 0.7527,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.86,
             "recon_error": 0.0
         },
         {
             "rank": 34,
-            "lat": 15.25,
-            "lon": 80.25,
-            "rmnpi": 0.7486,
+            "lat": 20.0,
+            "lon": 72.5,
+            "rmnpi": 0.7526,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.14,
             "recon_error": 0.0
         },
         {
             "rank": 35,
-            "lat": 20.0,
-            "lon": 71.75,
-            "rmnpi": 0.7473,
+            "lat": 15.25,
+            "lon": 80.25,
+            "rmnpi": 0.7486,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.12,
             "recon_error": 0.0
         },
         {
             "rank": 36,
-            "lat": 16.25,
-            "lon": 82.5,
-            "rmnpi": 0.7437,
+            "lat": 20.0,
+            "lon": 71.75,
+            "rmnpi": 0.7473,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.71,
             "recon_error": 0.0
         },
         {
             "rank": 37,
-            "lat": 18.0,
-            "lon": 84.0,
-            "rmnpi": 0.742,
+            "lat": 16.25,
+            "lon": 82.5,
+            "rmnpi": 0.7437,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.25,
             "recon_error": 0.0
         },
         {
             "rank": 38,
             "lat": 17.5,
             "lon": 83.25,
-            "rmnpi": 0.7397,
+            "rmnpi": 0.7396,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.61,
             "recon_error": 0.0
         },
         {
@@ -454,61 +454,61 @@ window.OCEANIQ_DATA = {
             "lon": 72.75,
             "rmnpi": 0.7375,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.43,
             "recon_error": 0.0
         },
         {
             "rank": 40,
-            "lat": 11.0,
-            "lon": 80.0,
-            "rmnpi": 0.7347,
-            "risk": "HIGH",
-            "sst": 28.5,
-            "recon_error": 0.0
-        },
-        {
-            "rank": 41,
             "lat": 8.75,
             "lon": 76.25,
             "rmnpi": 0.7344,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.01,
             "recon_error": 0.0
         },
         {
-            "rank": 42,
+            "rank": 41,
             "lat": 16.25,
             "lon": 81.25,
             "rmnpi": 0.734,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 32.14,
+            "recon_error": 0.0
+        },
+        {
+            "rank": 42,
+            "lat": 16.75,
+            "lon": 82.75,
+            "rmnpi": 0.7337,
+            "risk": "HIGH",
+            "sst": 31.03,
             "recon_error": 0.0
         },
         {
             "rank": 43,
-            "lat": 16.75,
-            "lon": 82.75,
-            "rmnpi": 0.7338,
-            "risk": "HIGH",
-            "sst": 28.5,
-            "recon_error": 0.0
-        },
-        {
-            "rank": 44,
             "lat": 19.25,
             "lon": 72.5,
             "rmnpi": 0.7331,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.23,
+            "recon_error": 0.0
+        },
+        {
+            "rank": 44,
+            "lat": 9.0,
+            "lon": 76.0,
+            "rmnpi": 0.7328,
+            "risk": "HIGH",
+            "sst": 31.06,
             "recon_error": 0.0
         },
         {
             "rank": 45,
             "lat": 9.0,
             "lon": 76.25,
-            "rmnpi": 0.7308,
+            "rmnpi": 0.7307,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.09,
             "recon_error": 0.0
         },
         {
@@ -517,43 +517,43 @@ window.OCEANIQ_DATA = {
             "lon": 72.25,
             "rmnpi": 0.7305,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.93,
             "recon_error": 0.0
         },
         {
             "rank": 47,
-            "lat": 18.25,
-            "lon": 73.0,
-            "rmnpi": 0.7238,
+            "lat": 18.0,
+            "lon": 84.0,
+            "rmnpi": 0.729,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.82,
             "recon_error": 0.0
         },
         {
             "rank": 48,
-            "lat": 17.25,
-            "lon": 83.0,
-            "rmnpi": 0.723,
+            "lat": 18.25,
+            "lon": 73.0,
+            "rmnpi": 0.7238,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.68,
             "recon_error": 0.0
         },
         {
             "rank": 49,
-            "lat": 18.25,
-            "lon": 84.5,
-            "rmnpi": 0.7222,
+            "lat": 17.25,
+            "lon": 83.0,
+            "rmnpi": 0.723,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.93,
             "recon_error": 0.0
         },
         {
             "rank": 50,
-            "lat": 9.0,
-            "lon": 76.0,
-            "rmnpi": 0.722,
+            "lat": 18.25,
+            "lon": 84.5,
+            "rmnpi": 0.7222,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.98,
             "recon_error": 0.0
         },
         {
@@ -562,25 +562,25 @@ window.OCEANIQ_DATA = {
             "lon": 83.75,
             "rmnpi": 0.7214,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.83,
             "recon_error": 0.0
         },
         {
             "rank": 52,
-            "lat": 17.25,
-            "lon": 83.25,
-            "rmnpi": 0.7122,
+            "lat": 16.0,
+            "lon": 82.0,
+            "rmnpi": 0.7209,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.14,
             "recon_error": 0.0
         },
         {
             "rank": 53,
-            "lat": 17.0,
-            "lon": 83.0,
-            "rmnpi": 0.7113,
+            "lat": 17.25,
+            "lon": 83.25,
+            "rmnpi": 0.7122,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.01,
             "recon_error": 0.0
         },
         {
@@ -589,25 +589,25 @@ window.OCEANIQ_DATA = {
             "lon": 76.0,
             "rmnpi": 0.7112,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.13,
             "recon_error": 0.0
         },
         {
             "rank": 55,
             "lat": 17.25,
             "lon": 83.5,
-            "rmnpi": 0.7094,
+            "rmnpi": 0.7093,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.97,
             "recon_error": 0.0
         },
         {
             "rank": 56,
             "lat": 17.5,
             "lon": 83.5,
-            "rmnpi": 0.7078,
+            "rmnpi": 0.7077,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.78,
             "recon_error": 0.0
         },
         {
@@ -616,7 +616,7 @@ window.OCEANIQ_DATA = {
             "lon": 81.25,
             "rmnpi": 0.7052,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.92,
             "recon_error": 0.0
         },
         {
@@ -625,7 +625,7 @@ window.OCEANIQ_DATA = {
             "lon": 83.5,
             "rmnpi": 0.7047,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.07,
             "recon_error": 0.0
         },
         {
@@ -634,7 +634,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.0,
             "rmnpi": 0.703,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.94,
             "recon_error": 0.0
         },
         {
@@ -643,7 +643,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.25,
             "rmnpi": 0.703,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.0,
             "recon_error": 0.0
         },
         {
@@ -652,7 +652,7 @@ window.OCEANIQ_DATA = {
             "lon": 76.5,
             "rmnpi": 0.7015,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.92,
             "recon_error": 0.0
         },
         {
@@ -661,7 +661,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.25,
             "rmnpi": 0.6993,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.07,
             "recon_error": 0.0
         },
         {
@@ -670,7 +670,7 @@ window.OCEANIQ_DATA = {
             "lon": 84.0,
             "rmnpi": 0.6988,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.81,
             "recon_error": 0.0
         },
         {
@@ -679,7 +679,7 @@ window.OCEANIQ_DATA = {
             "lon": 73.0,
             "rmnpi": 0.6979,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.63,
             "recon_error": 0.0
         },
         {
@@ -688,7 +688,7 @@ window.OCEANIQ_DATA = {
             "lon": 76.0,
             "rmnpi": 0.6973,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.22,
             "recon_error": 0.0
         },
         {
@@ -697,7 +697,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.0,
             "rmnpi": 0.6971,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.55,
             "recon_error": 0.0
         },
         {
@@ -706,16 +706,16 @@ window.OCEANIQ_DATA = {
             "lon": 81.0,
             "rmnpi": 0.6949,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.05,
             "recon_error": 0.0
         },
         {
             "rank": 68,
             "lat": 17.0,
             "lon": 83.25,
-            "rmnpi": 0.6924,
+            "rmnpi": 0.6923,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.01,
             "recon_error": 0.0
         },
         {
@@ -724,7 +724,7 @@ window.OCEANIQ_DATA = {
             "lon": 71.5,
             "rmnpi": 0.6915,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.58,
             "recon_error": 0.0
         },
         {
@@ -733,16 +733,16 @@ window.OCEANIQ_DATA = {
             "lon": 82.25,
             "rmnpi": 0.6914,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.27,
             "recon_error": 0.0
         },
         {
             "rank": 71,
             "lat": 18.0,
             "lon": 84.25,
-            "rmnpi": 0.6882,
+            "rmnpi": 0.6881,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.93,
             "recon_error": 0.0
         },
         {
@@ -751,25 +751,25 @@ window.OCEANIQ_DATA = {
             "lon": 71.75,
             "rmnpi": 0.688,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.8,
             "recon_error": 0.0
         },
         {
             "rank": 73,
             "lat": 17.5,
             "lon": 83.75,
-            "rmnpi": 0.6861,
+            "rmnpi": 0.686,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.94,
             "recon_error": 0.0
         },
         {
             "rank": 74,
             "lat": 17.25,
             "lon": 83.75,
-            "rmnpi": 0.6838,
+            "rmnpi": 0.6837,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.02,
             "recon_error": 0.0
         },
         {
@@ -778,7 +778,7 @@ window.OCEANIQ_DATA = {
             "lon": 83.75,
             "rmnpi": 0.6784,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.15,
             "recon_error": 0.0
         },
         {
@@ -787,7 +787,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.5,
             "rmnpi": 0.6764,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.15,
             "recon_error": 0.0
         },
         {
@@ -796,16 +796,16 @@ window.OCEANIQ_DATA = {
             "lon": 81.25,
             "rmnpi": 0.6742,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.32,
             "recon_error": 0.0
         },
         {
             "rank": 78,
             "lat": 17.75,
             "lon": 84.25,
-            "rmnpi": 0.6734,
+            "rmnpi": 0.6733,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.99,
             "recon_error": 0.0
         },
         {
@@ -814,79 +814,79 @@ window.OCEANIQ_DATA = {
             "lon": 76.75,
             "rmnpi": 0.6721,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.94,
             "recon_error": 0.0
         },
         {
             "rank": 80,
-            "lat": 16.0,
-            "lon": 82.0,
-            "rmnpi": 0.6712,
-            "risk": "HIGH",
-            "sst": 28.5,
-            "recon_error": 0.0
-        },
-        {
-            "rank": 81,
             "lat": 18.25,
             "lon": 84.75,
             "rmnpi": 0.6686,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.1,
             "recon_error": 0.0
         },
         {
-            "rank": 82,
+            "rank": 81,
             "lat": 15.0,
             "lon": 80.25,
             "rmnpi": 0.6679,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.1,
             "recon_error": 0.0
         },
         {
-            "rank": 83,
+            "rank": 82,
             "lat": 8.75,
             "lon": 76.5,
             "rmnpi": 0.6633,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.08,
             "recon_error": 0.0
         },
         {
-            "rank": 84,
+            "rank": 83,
             "lat": 19.0,
             "lon": 72.5,
             "rmnpi": 0.6625,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.15,
             "recon_error": 0.0
         },
         {
-            "rank": 85,
+            "rank": 84,
             "lat": 18.25,
             "lon": 72.75,
             "rmnpi": 0.6615,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.29,
             "recon_error": 0.0
         },
         {
-            "rank": 86,
+            "rank": 85,
             "lat": 8.25,
             "lon": 77.0,
             "rmnpi": 0.6605,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.82,
+            "recon_error": 0.0
+        },
+        {
+            "rank": 86,
+            "lat": 17.0,
+            "lon": 83.0,
+            "rmnpi": 0.6604,
+            "risk": "HIGH",
+            "sst": 31.02,
             "recon_error": 0.0
         },
         {
             "rank": 87,
             "lat": 9.75,
             "lon": 76.0,
-            "rmnpi": 0.6593,
+            "rmnpi": 0.6592,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.29,
             "recon_error": 0.0
         },
         {
@@ -895,7 +895,7 @@ window.OCEANIQ_DATA = {
             "lon": 73.0,
             "rmnpi": 0.6587,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.55,
             "recon_error": 0.0
         },
         {
@@ -904,7 +904,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.75,
             "rmnpi": 0.6585,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.2,
             "recon_error": 0.0
         },
         {
@@ -913,16 +913,16 @@ window.OCEANIQ_DATA = {
             "lon": 82.75,
             "rmnpi": 0.6529,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.12,
             "recon_error": 0.0
         },
         {
             "rank": 91,
             "lat": 16.0,
             "lon": 82.5,
-            "rmnpi": 0.6527,
+            "rmnpi": 0.6526,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.36,
             "recon_error": 0.0
         },
         {
@@ -931,7 +931,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.0,
             "rmnpi": 0.6523,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 32.0,
             "recon_error": 0.0
         },
         {
@@ -940,7 +940,7 @@ window.OCEANIQ_DATA = {
             "lon": 77.5,
             "rmnpi": 0.6504,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.71,
             "recon_error": 0.0
         },
         {
@@ -949,16 +949,16 @@ window.OCEANIQ_DATA = {
             "lon": 71.25,
             "rmnpi": 0.6488,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.55,
             "recon_error": 0.0
         },
         {
             "rank": 95,
             "lat": 16.75,
             "lon": 83.5,
-            "rmnpi": 0.6466,
+            "rmnpi": 0.6465,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.17,
             "recon_error": 0.0
         },
         {
@@ -967,7 +967,7 @@ window.OCEANIQ_DATA = {
             "lon": 85.0,
             "rmnpi": 0.6445,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.31,
             "recon_error": 0.0
         },
         {
@@ -976,16 +976,16 @@ window.OCEANIQ_DATA = {
             "lon": 80.25,
             "rmnpi": 0.6444,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.34,
             "recon_error": 0.0
         },
         {
             "rank": 98,
             "lat": 16.0,
             "lon": 81.75,
-            "rmnpi": 0.6431,
+            "rmnpi": 0.643,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.18,
             "recon_error": 0.0
         },
         {
@@ -994,7 +994,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.25,
             "rmnpi": 0.6426,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.25,
             "recon_error": 0.0
         },
         {
@@ -1003,7 +1003,7 @@ window.OCEANIQ_DATA = {
             "lon": 76.75,
             "rmnpi": 0.6405,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.82,
             "recon_error": 0.0
         },
         {
@@ -1012,7 +1012,7 @@ window.OCEANIQ_DATA = {
             "lon": 84.0,
             "rmnpi": 0.6389,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.94,
             "recon_error": 0.0
         },
         {
@@ -1021,7 +1021,7 @@ window.OCEANIQ_DATA = {
             "lon": 84.25,
             "rmnpi": 0.6371,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.12,
             "recon_error": 0.0
         },
         {
@@ -1030,7 +1030,7 @@ window.OCEANIQ_DATA = {
             "lon": 83.75,
             "rmnpi": 0.6366,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.2,
             "recon_error": 0.0
         },
         {
@@ -1039,7 +1039,7 @@ window.OCEANIQ_DATA = {
             "lon": 72.25,
             "rmnpi": 0.6356,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.06,
             "recon_error": 0.0
         },
         {
@@ -1048,16 +1048,16 @@ window.OCEANIQ_DATA = {
             "lon": 83.0,
             "rmnpi": 0.6315,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.02,
             "recon_error": 0.0
         },
         {
             "rank": 106,
             "lat": 16.0,
             "lon": 81.5,
-            "rmnpi": 0.6309,
+            "rmnpi": 0.6308,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.26,
             "recon_error": 0.0
         },
         {
@@ -1066,7 +1066,7 @@ window.OCEANIQ_DATA = {
             "lon": 79.5,
             "rmnpi": 0.6307,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 32.96,
             "recon_error": 0.0
         },
         {
@@ -1075,52 +1075,52 @@ window.OCEANIQ_DATA = {
             "lon": 80.25,
             "rmnpi": 0.6293,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.19,
             "recon_error": 0.0
         },
         {
             "rank": 109,
             "lat": 8.0,
-            "lon": 77.75,
-            "rmnpi": 0.627,
+            "lon": 77.0,
+            "rmnpi": 0.6282,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.72,
             "recon_error": 0.0
         },
         {
             "rank": 110,
-            "lat": 16.0,
-            "lon": 85.0,
-            "rmnpi": 0.6252,
+            "lat": 8.0,
+            "lon": 77.75,
+            "rmnpi": 0.6269,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.68,
             "recon_error": 0.0
         },
         {
             "rank": 111,
-            "lat": 10.25,
-            "lon": 79.75,
-            "rmnpi": 0.6248,
+            "lat": 16.0,
+            "lon": 85.0,
+            "rmnpi": 0.6252,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.98,
             "recon_error": 0.0
         },
         {
             "rank": 112,
-            "lat": 8.0,
-            "lon": 77.25,
-            "rmnpi": 0.6245,
+            "lat": 10.25,
+            "lon": 79.75,
+            "rmnpi": 0.6248,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 32.82,
             "recon_error": 0.0
         },
         {
             "rank": 113,
             "lat": 8.0,
-            "lon": 77.0,
-            "rmnpi": 0.6227,
+            "lon": 77.25,
+            "rmnpi": 0.6244,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.72,
             "recon_error": 0.0
         },
         {
@@ -1129,25 +1129,25 @@ window.OCEANIQ_DATA = {
             "lon": 85.0,
             "rmnpi": 0.6227,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.95,
             "recon_error": 0.0
         },
         {
             "rank": 115,
             "lat": 19.75,
             "lon": 71.5,
-            "rmnpi": 0.6223,
+            "rmnpi": 0.6224,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.64,
             "recon_error": 0.0
         },
         {
             "rank": 116,
             "lat": 14.0,
             "lon": 80.25,
-            "rmnpi": 0.6216,
+            "rmnpi": 0.6215,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.11,
             "recon_error": 0.0
         },
         {
@@ -1156,7 +1156,7 @@ window.OCEANIQ_DATA = {
             "lon": 81.0,
             "rmnpi": 0.6207,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.24,
             "recon_error": 0.0
         },
         {
@@ -1165,16 +1165,16 @@ window.OCEANIQ_DATA = {
             "lon": 80.0,
             "rmnpi": 0.6146,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.31,
             "recon_error": 0.0
         },
         {
             "rank": 119,
             "lat": 9.5,
             "lon": 75.75,
-            "rmnpi": 0.6143,
+            "rmnpi": 0.6142,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.11,
             "recon_error": 0.0
         },
         {
@@ -1183,7 +1183,7 @@ window.OCEANIQ_DATA = {
             "lon": 80.25,
             "rmnpi": 0.6133,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.01,
             "recon_error": 0.0
         },
         {
@@ -1192,7 +1192,7 @@ window.OCEANIQ_DATA = {
             "lon": 81.25,
             "rmnpi": 0.6128,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.21,
             "recon_error": 0.0
         },
         {
@@ -1201,43 +1201,43 @@ window.OCEANIQ_DATA = {
             "lon": 84.5,
             "rmnpi": 0.6118,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.1,
             "recon_error": 0.0
         },
         {
             "rank": 123,
             "lat": 16.75,
             "lon": 83.25,
-            "rmnpi": 0.6117,
+            "rmnpi": 0.6116,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.12,
             "recon_error": 0.0
         },
         {
             "rank": 124,
-            "lat": 18.0,
-            "lon": 85.0,
-            "rmnpi": 0.6107,
+            "lat": 15.75,
+            "lon": 81.5,
+            "rmnpi": 0.6104,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.08,
             "recon_error": 0.0
         },
         {
             "rank": 125,
-            "lat": 15.75,
-            "lon": 81.5,
-            "rmnpi": 0.6105,
-            "risk": "HIGH",
-            "sst": 28.5,
-            "recon_error": 0.0
-        },
-        {
-            "rank": 126,
             "lat": 18.0,
             "lon": 84.75,
             "rmnpi": 0.6101,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.23,
+            "recon_error": 0.0
+        },
+        {
+            "rank": 126,
+            "lat": 11.0,
+            "lon": 80.25,
+            "rmnpi": 0.6083,
+            "risk": "HIGH",
+            "sst": 31.06,
             "recon_error": 0.0
         },
         {
@@ -1246,16 +1246,16 @@ window.OCEANIQ_DATA = {
             "lon": 80.25,
             "rmnpi": 0.6083,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.03,
             "recon_error": 0.0
         },
         {
             "rank": 128,
-            "lat": 11.0,
-            "lon": 80.25,
-            "rmnpi": 0.6083,
+            "lat": 10.0,
+            "lon": 76.0,
+            "rmnpi": 0.6076,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.39,
             "recon_error": 0.0
         },
         {
@@ -1264,178 +1264,178 @@ window.OCEANIQ_DATA = {
             "lon": 80.5,
             "rmnpi": 0.6065,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.21,
             "recon_error": 0.0
         },
         {
             "rank": 130,
-            "lat": 18.75,
-            "lon": 72.5,
-            "rmnpi": 0.6047,
+            "lat": 18.0,
+            "lon": 85.0,
+            "rmnpi": 0.605,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.34,
             "recon_error": 0.0
         },
         {
             "rank": 131,
-            "lat": 7.75,
-            "lon": 77.5,
-            "rmnpi": 0.6017,
+            "lat": 18.75,
+            "lon": 72.5,
+            "rmnpi": 0.6047,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.1,
             "recon_error": 0.0
         },
         {
             "rank": 132,
-            "lat": 15.75,
-            "lon": 84.75,
-            "rmnpi": 0.6013,
+            "lat": 7.75,
+            "lon": 77.5,
+            "rmnpi": 0.6016,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.69,
             "recon_error": 0.0
         },
         {
             "rank": 133,
-            "lat": 16.0,
+            "lat": 15.75,
             "lon": 84.75,
-            "rmnpi": 0.6005,
+            "rmnpi": 0.6013,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 30.99,
             "recon_error": 0.0
         },
         {
             "rank": 134,
-            "lat": 9.75,
-            "lon": 75.75,
-            "rmnpi": 0.6003,
+            "lat": 16.0,
+            "lon": 84.75,
+            "rmnpi": 0.6005,
             "risk": "HIGH",
-            "sst": 28.5,
+            "sst": 31.01,
             "recon_error": 0.0
         },
         {
             "rank": 135,
-            "lat": 15.75,
-            "lon": 81.75,
-            "rmnpi": 0.599,
-            "risk": "MODERATE",
-            "sst": 28.5,
+            "lat": 9.75,
+            "lon": 75.75,
+            "rmnpi": 0.6003,
+            "risk": "HIGH",
+            "sst": 31.12,
             "recon_error": 0.0
         },
         {
             "rank": 136,
-            "lat": 7.75,
-            "lon": 77.25,
-            "rmnpi": 0.5987,
+            "lat": 15.75,
+            "lon": 81.75,
+            "rmnpi": 0.599,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.25,
             "recon_error": 0.0
         },
         {
             "rank": 137,
-            "lat": 16.25,
-            "lon": 85.0,
-            "rmnpi": 0.5984,
+            "lat": 7.75,
+            "lon": 77.25,
+            "rmnpi": 0.5987,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 30.63,
             "recon_error": 0.0
         },
         {
             "rank": 138,
-            "lat": 17.25,
-            "lon": 84.25,
-            "rmnpi": 0.5983,
+            "lat": 16.25,
+            "lon": 85.0,
+            "rmnpi": 0.5984,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.07,
             "recon_error": 0.0
         },
         {
             "rank": 139,
-            "lat": 16.25,
-            "lon": 82.75,
-            "rmnpi": 0.5972,
+            "lat": 17.25,
+            "lon": 84.25,
+            "rmnpi": 0.5983,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.17,
             "recon_error": 0.0
         },
         {
             "rank": 140,
-            "lat": 8.5,
-            "lon": 76.25,
-            "rmnpi": 0.5944,
+            "lat": 16.25,
+            "lon": 82.75,
+            "rmnpi": 0.5972,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.29,
             "recon_error": 0.0
         },
         {
             "rank": 141,
-            "lat": 17.5,
-            "lon": 73.0,
-            "rmnpi": 0.5941,
+            "lat": 8.5,
+            "lon": 76.25,
+            "rmnpi": 0.5943,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 30.92,
             "recon_error": 0.0
         },
         {
             "rank": 142,
-            "lat": 19.5,
-            "lon": 72.0,
-            "rmnpi": 0.5938,
+            "lat": 17.5,
+            "lon": 73.0,
+            "rmnpi": 0.5941,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.38,
             "recon_error": 0.0
         },
         {
             "rank": 143,
-            "lat": 10.25,
-            "lon": 80.0,
-            "rmnpi": 0.5911,
+            "lat": 19.5,
+            "lon": 72.0,
+            "rmnpi": 0.5938,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.0,
             "recon_error": 0.0
         },
         {
             "rank": 144,
-            "lat": 10.5,
-            "lon": 80.25,
-            "rmnpi": 0.5894,
+            "lat": 10.25,
+            "lon": 80.0,
+            "rmnpi": 0.591,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 32.41,
             "recon_error": 0.0
         },
         {
             "rank": 145,
-            "lat": 16.5,
-            "lon": 83.5,
-            "rmnpi": 0.5885,
+            "lat": 10.5,
+            "lon": 80.25,
+            "rmnpi": 0.5894,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.1,
             "recon_error": 0.0
         },
         {
             "rank": 146,
-            "lat": 10.0,
-            "lon": 76.0,
-            "rmnpi": 0.5883,
+            "lat": 16.5,
+            "lon": 83.5,
+            "rmnpi": 0.5885,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.26,
             "recon_error": 0.0
         },
         {
             "rank": 147,
-            "lat": 16.5,
-            "lon": 83.75,
+            "lat": 8.0,
+            "lon": 78.0,
             "rmnpi": 0.5878,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 30.57,
             "recon_error": 0.0
         },
         {
             "rank": 148,
-            "lat": 8.0,
-            "lon": 78.0,
-            "rmnpi": 0.5873,
+            "lat": 16.5,
+            "lon": 83.75,
+            "rmnpi": 0.5877,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.21,
             "recon_error": 0.0
         },
         {
@@ -1444,25 +1444,25 @@ window.OCEANIQ_DATA = {
             "lon": 82.0,
             "rmnpi": 0.5871,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.37,
             "recon_error": 0.0
         },
         {
             "rank": 150,
             "lat": 15.0,
             "lon": 80.75,
-            "rmnpi": 0.5865,
+            "rmnpi": 0.5864,
             "risk": "MODERATE",
-            "sst": 28.5,
+            "sst": 31.24,
             "recon_error": 0.0
         }
     ],
     "pipeline_summary": {
         "total_cells": 4507209,
         "critical_cells": 868,
-        "high_cells": 11036,
-        "moderate_cells": 77776,
-        "low_cells": 4429433,
+        "high_cells": 11029,
+        "moderate_cells": 77346,
+        "low_cells": 4429863,
         "avg_rmnpi": 0.1206,
         "max_rmnpi": 1.0,
         "pct_critical": 0.019,
@@ -1471,109 +1471,109 @@ window.OCEANIQ_DATA = {
     "timeseries": [
         {
             "month": "Jan",
-            "rainfall": 116,
+            "rainfall": 102,
             "sst": 26.6,
-            "ndvi": 0.5,
-            "discharge": 941,
-            "anomalies": 0
+            "ndvi": 0.61,
+            "discharge": 964,
+            "anomalies": 1
         }
     ],
     "epochs": [
         {
             "epoch": 1,
-            "loss": 0.8471828255259287
+            "loss": 0.8529006790954724
         },
         {
             "epoch": 2,
-            "loss": 0.7436981854318833
+            "loss": 0.749283545326872
         },
         {
             "epoch": 3,
-            "loss": 0.6621315291485876
+            "loss": 0.6666553187501633
         },
         {
             "epoch": 4,
-            "loss": 0.5777757691873897
+            "loss": 0.5758650172506885
         },
         {
             "epoch": 5,
-            "loss": 0.5147833202348253
+            "loss": 0.5227120178964528
         },
         {
             "epoch": 6,
-            "loss": 0.456790613861047
+            "loss": 0.45331902554745646
         },
         {
             "epoch": 7,
-            "loss": 0.39467311246303716
+            "loss": 0.39655139651857807
         },
         {
             "epoch": 8,
-            "loss": 0.34830404910356977
+            "loss": 0.35093024966293235
         },
         {
             "epoch": 9,
-            "loss": 0.3142953528796504
+            "loss": 0.3077488059399903
         },
         {
             "epoch": 10,
-            "loss": 0.2739962683024435
+            "loss": 0.26769024838278155
         },
         {
             "epoch": 11,
-            "loss": 0.24562720564605664
+            "loss": 0.23673105115359705
         },
         {
             "epoch": 12,
-            "loss": 0.22402692838629681
+            "loss": 0.20759127057757248
         },
         {
             "epoch": 13,
-            "loss": 0.1854945844604594
+            "loss": 0.1808351148522701
         },
         {
             "epoch": 14,
-            "loss": 0.1589098476279846
+            "loss": 0.1663342344836689
         },
         {
             "epoch": 15,
-            "loss": 0.14169430658615592
+            "loss": 0.14933069738936458
         },
         {
             "epoch": 16,
-            "loss": 0.1274165844296537
+            "loss": 0.1260942959277681
         },
         {
             "epoch": 17,
-            "loss": 0.12339376277697604
+            "loss": 0.11740868840644302
         },
         {
             "epoch": 18,
-            "loss": 0.10949297468445299
+            "loss": 0.11123490069320523
         },
         {
             "epoch": 19,
-            "loss": 0.08841937754357433
+            "loss": 0.08831740226921322
         },
         {
             "epoch": 20,
-            "loss": 0.08251909159171567
+            "loss": 0.07965106620947034
         },
         {
             "epoch": 21,
-            "loss": 0.06745777984007278
+            "loss": 0.07649509925231757
         },
         {
             "epoch": 22,
-            "loss": 0.060276952932832056
+            "loss": 0.05196651771270941
         },
         {
             "epoch": 23,
-            "loss": 0.059681104518167084
+            "loss": 0.06331416010303263
         },
         {
             "epoch": 24,
-            "loss": 0.04137658047140136
+            "loss": 0.047168602889676406
         },
         {
             "epoch": 25,
@@ -1581,7 +1581,7 @@ window.OCEANIQ_DATA = {
         },
         {
             "epoch": 26,
-            "loss": 0.04377853318986147
+            "loss": 0.04
         },
         {
             "epoch": 27,
@@ -1683,302 +1683,302 @@ window.OCEANIQ_DATA = {
     "tsne": [
         {
             "id": 0,
-            "x": 73.03130570073893,
-            "y": 73.99837085489352,
+            "x": 82.52185493340454,
+            "y": 86.92351778439667,
             "risk": "CRITICAL"
         },
         {
             "id": 1,
-            "x": 77.43281187282174,
-            "y": 87.99607807872195,
+            "x": 85.30110053753438,
+            "y": 70.50180318795888,
             "risk": "CRITICAL"
         },
         {
             "id": 2,
-            "x": 74.90176069428351,
-            "y": 87.18873999828024,
+            "x": 84.26226532087065,
+            "y": 76.17178472270906,
             "risk": "CRITICAL"
         },
         {
             "id": 3,
-            "x": 82.8059223268664,
-            "y": 79.95080399428875,
+            "x": 85.96568967674934,
+            "y": 85.72608867542928,
             "risk": "CRITICAL"
         },
         {
             "id": 4,
-            "x": 87.0748744242157,
-            "y": 82.91640030647272,
+            "x": 80.02234807818087,
+            "y": 71.19071333001867,
             "risk": "CRITICAL"
         },
         {
             "id": 5,
-            "x": 75.87627074637969,
-            "y": 86.69679212788722,
+            "x": 70.0096398092072,
+            "y": 70.22402849021614,
             "risk": "CRITICAL"
         },
         {
             "id": 6,
-            "x": 73.89442954930668,
-            "y": 74.61907206391982,
+            "x": 88.54197215442824,
+            "y": 77.86846354440581,
             "risk": "CRITICAL"
         },
         {
             "id": 7,
-            "x": 76.54002491419303,
-            "y": 73.25307147663474,
+            "x": 87.52693629166285,
+            "y": 89.05312349070941,
             "risk": "CRITICAL"
         },
         {
             "id": 8,
-            "x": 88.92699577970009,
-            "y": 78.72453996531264,
+            "x": 81.39524067508137,
+            "y": 79.3328415672336,
             "risk": "CRITICAL"
         },
         {
             "id": 9,
-            "x": 84.06058162003802,
-            "y": 81.94326991478624,
+            "x": 75.38447542097656,
+            "y": 72.87609381097997,
             "risk": "CRITICAL"
         },
         {
             "id": 10,
-            "x": 57.93484417537152,
-            "y": 69.49386741471939,
+            "x": 43.54421795581972,
+            "y": 65.27595892444904,
             "risk": "HIGH"
         },
         {
             "id": 11,
-            "x": 46.207851535067405,
-            "y": 63.03106959441244,
+            "x": 56.162962524558694,
+            "y": 73.90874491636988,
             "risk": "HIGH"
         },
         {
             "id": 12,
-            "x": 40.23824261650732,
-            "y": 71.66832983776214,
+            "x": 56.250788021417435,
+            "y": 75.02547333152532,
             "risk": "HIGH"
         },
         {
             "id": 13,
-            "x": 54.00157461212151,
-            "y": 71.17757351389521,
+            "x": 46.64682544941679,
+            "y": 70.94172418017422,
             "risk": "HIGH"
         },
         {
             "id": 14,
-            "x": 51.51935289820469,
-            "y": 67.97116165907384,
+            "x": 46.18076295085268,
+            "y": 70.11524936607823,
             "risk": "HIGH"
         },
         {
             "id": 15,
-            "x": 62.01783814542854,
-            "y": 74.54583702882937,
+            "x": 62.32140307399051,
+            "y": 70.58593481347398,
             "risk": "HIGH"
         },
         {
             "id": 16,
-            "x": 43.9771838775539,
-            "y": 55.30473279779211,
+            "x": 58.682264862098336,
+            "y": 54.38599031078982,
             "risk": "HIGH"
         },
         {
             "id": 17,
-            "x": 56.21255810830287,
-            "y": 61.26411364754291,
+            "x": 54.35056294003837,
+            "y": 76.00907810477648,
             "risk": "HIGH"
         },
         {
             "id": 18,
-            "x": 49.98963251950603,
-            "y": 54.41483246587182,
+            "x": 69.21012545101502,
+            "y": 50.13791711345244,
             "risk": "HIGH"
         },
         {
             "id": 19,
-            "x": 44.42058284502201,
-            "y": 61.620979813973264,
+            "x": 65.585445121488,
+            "y": 61.67804113479178,
             "risk": "HIGH"
         },
         {
             "id": 20,
-            "x": 54.323570872651544,
-            "y": 58.04910570839506,
+            "x": 44.149431901100925,
+            "y": 63.8117816165411,
             "risk": "HIGH"
         },
         {
             "id": 21,
-            "x": 60.91949689008482,
-            "y": 58.52702644495158,
+            "x": 43.43647495781574,
+            "y": 77.3912191489251,
             "risk": "HIGH"
         },
         {
             "id": 22,
-            "x": 57.95922970086464,
-            "y": 67.57839539887553,
+            "x": 57.21663483998131,
+            "y": 58.993122206688426,
             "risk": "HIGH"
         },
         {
             "id": 23,
-            "x": 45.159454121036745,
-            "y": 63.96561011702144,
+            "x": 62.94805467312722,
+            "y": 70.18228189668785,
             "risk": "HIGH"
         },
         {
             "id": 24,
-            "x": 56.40031253541812,
-            "y": 67.41168269071531,
+            "x": 63.894298732450864,
+            "y": 70.861346327778,
             "risk": "HIGH"
         },
         {
             "id": 25,
-            "x": 69.09332330687212,
-            "y": 21.03759190671052,
+            "x": 42.55617463679176,
+            "y": 38.23207173919724,
             "risk": "MODERATE"
         },
         {
             "id": 26,
-            "x": 58.82282519485386,
-            "y": 26.723314343140206,
+            "x": 62.64025689697247,
+            "y": 49.96858968329355,
             "risk": "MODERATE"
         },
         {
             "id": 27,
-            "x": 34.6679894048225,
-            "y": 27.555325265603127,
+            "x": 64.89773005429898,
+            "y": 55.68842443138645,
             "risk": "MODERATE"
         },
         {
             "id": 28,
-            "x": 51.59663114753078,
-            "y": 57.65520015005005,
+            "x": 40.719643592905314,
+            "y": 29.23763711947113,
             "risk": "MODERATE"
         },
         {
             "id": 29,
-            "x": 42.73252739499205,
-            "y": 30.480327077185617,
+            "x": 57.56971273116562,
+            "y": 30.26078753765136,
             "risk": "MODERATE"
         },
         {
             "id": 30,
-            "x": 64.45759298904689,
-            "y": 30.13726570941604,
+            "x": 54.85753304476154,
+            "y": 58.415187229939974,
             "risk": "MODERATE"
         },
         {
             "id": 31,
-            "x": 39.54288965508436,
-            "y": 20.14071201749189,
+            "x": 48.66792342380243,
+            "y": 20.781977992738522,
             "risk": "MODERATE"
         },
         {
             "id": 32,
-            "x": 67.14376625895017,
-            "y": 57.908658891102746,
+            "x": 48.746564756471685,
+            "y": 20.035322545846196,
             "risk": "MODERATE"
         },
         {
             "id": 33,
-            "x": 55.39748437915014,
-            "y": 52.76805621285714,
+            "x": 48.78679169290464,
+            "y": 20.81964920565889,
             "risk": "MODERATE"
         },
         {
             "id": 34,
-            "x": 69.30483918535275,
-            "y": 39.2526834046884,
+            "x": 53.09901070742036,
+            "y": 21.629440235762324,
             "risk": "MODERATE"
         },
         {
             "id": 35,
-            "x": 64.72906891767613,
-            "y": 40.56520796010449,
+            "x": 68.94118615397511,
+            "y": 25.394916503267385,
             "risk": "MODERATE"
         },
         {
             "id": 36,
-            "x": 52.93662534033214,
-            "y": 39.252644661177484,
+            "x": 50.07976891729539,
+            "y": 46.46263954815126,
             "risk": "MODERATE"
         },
         {
             "id": 37,
-            "x": 53.86803992260961,
-            "y": 31.05188418583273,
+            "x": 44.276851785559074,
+            "y": 25.45872103093715,
             "risk": "MODERATE"
         },
         {
             "id": 38,
-            "x": 45.20457796170701,
-            "y": 58.19237699746936,
+            "x": 53.93208778678048,
+            "y": 22.815866488757962,
             "risk": "MODERATE"
         },
         {
             "id": 39,
-            "x": 64.40931231438326,
-            "y": 21.639529363961326,
+            "x": 54.24758224949933,
+            "y": 24.875090441882097,
             "risk": "MODERATE"
         },
         {
             "id": 40,
-            "x": 19.269531470173412,
-            "y": 38.1878511680047,
+            "x": 17.130689473601535,
+            "y": 22.19566622122128,
             "risk": "LOW"
         },
         {
             "id": 41,
-            "x": 24.651689150030144,
-            "y": 31.48914251508278,
+            "x": 21.445617200877933,
+            "y": 20.800471277446224,
             "risk": "LOW"
         },
         {
             "id": 42,
-            "x": 29.69363285007067,
-            "y": 29.331501156880513,
+            "x": 10.594820617742617,
+            "y": 19.34513642730124,
             "risk": "LOW"
         },
         {
             "id": 43,
-            "x": 17.37232378668126,
-            "y": 39.05830429055348,
+            "x": 28.33585422211917,
+            "y": 11.602493133716239,
             "risk": "LOW"
         },
         {
             "id": 44,
-            "x": 28.143217964202798,
-            "y": 27.26985804719906,
+            "x": 19.358570621477504,
+            "y": 33.59678109062007,
             "risk": "LOW"
         },
         {
             "id": 45,
-            "x": 19.578732132877683,
-            "y": 19.849768013930564,
+            "x": 16.163001452204853,
+            "y": 11.2524885925085,
             "risk": "LOW"
         },
         {
             "id": 46,
-            "x": 12.01561854688918,
-            "y": 28.516395517083406,
+            "x": 25.160808551757402,
+            "y": 11.097101263583953,
             "risk": "LOW"
         },
         {
             "id": 47,
-            "x": 23.33930363970829,
-            "y": 12.517413832197288,
+            "x": 28.749376385746977,
+            "y": 36.555404019531494,
             "risk": "LOW"
         },
         {
             "id": 48,
-            "x": 17.15458561086796,
-            "y": 18.817871670485612,
+            "x": 10.613224143918313,
+            "y": 30.1311174572139,
             "risk": "LOW"
         },
         {
             "id": 49,
-            "x": 23.927146920197657,
-            "y": 20.727529272610255,
+            "x": 19.97298859647624,
+            "y": 20.123110395697573,
             "risk": "LOW"
         }
     ],
@@ -1988,8 +1988,8 @@ window.OCEANIQ_DATA = {
             "date": "2015-01-01",
             "var": "seasonal_factor",
             "obs": "0.14",
-            "exp": "0.03",
-            "dev": "11.6%",
+            "exp": "0.20",
+            "dev": "6.3%",
             "sev": "MODERATE"
         },
         {
@@ -1997,8 +1997,8 @@ window.OCEANIQ_DATA = {
             "date": "2015-01-01",
             "var": "seasonal_factor",
             "obs": "0.14",
-            "exp": "0.07",
-            "dev": "7.5%",
+            "exp": "0.21",
+            "dev": "6.9%",
             "sev": "MODERATE"
         },
         {
@@ -2006,8 +2006,8 @@ window.OCEANIQ_DATA = {
             "date": "2015-01-01",
             "var": "seasonal_factor",
             "obs": "0.14",
-            "exp": "0.07",
-            "dev": "7.4%",
+            "exp": "0.22",
+            "dev": "7.6%",
             "sev": "MODERATE"
         },
         {
@@ -2015,120 +2015,120 @@ window.OCEANIQ_DATA = {
             "date": "2015-01-01",
             "var": "seasonal_factor",
             "obs": "0.14",
-            "exp": "0.04",
-            "dev": "9.5%",
+            "exp": "0.23",
+            "dev": "8.8%",
             "sev": "MODERATE"
         },
         {
-            "zone": "Grid Cell #5",
+            "zone": "Grid Cell #6",
             "date": "2015-01-01",
             "var": "seasonal_factor",
             "obs": "0.14",
-            "exp": "0.09",
-            "dev": "5.2%",
+            "exp": "0.22",
+            "dev": "7.7%",
             "sev": "MODERATE"
         }
     ],
     "biodiversity": [
         {
             "id": 0,
-            "rmnpi": 0.25,
-            "bioIndex": 0.53
+            "rmnpi": 0.97,
+            "bioIndex": 0.95
         },
         {
             "id": 1,
-            "rmnpi": 0.15,
-            "bioIndex": 0.37
+            "rmnpi": 0.99,
+            "bioIndex": 0.66
         },
         {
             "id": 2,
-            "rmnpi": 0.11,
-            "bioIndex": 0.75
+            "rmnpi": 0.48,
+            "bioIndex": 0.51
         },
         {
             "id": 3,
-            "rmnpi": 0.57,
-            "bioIndex": 0.81
+            "rmnpi": 0.24,
+            "bioIndex": 0.44
         },
         {
             "id": 4,
-            "rmnpi": 0.51,
-            "bioIndex": 0.74
+            "rmnpi": 0.41,
+            "bioIndex": 0.59
         },
         {
             "id": 5,
-            "rmnpi": 0.74,
-            "bioIndex": 0.88
+            "rmnpi": 0.62,
+            "bioIndex": 0.23
         },
         {
             "id": 6,
-            "rmnpi": 0.28,
-            "bioIndex": 0.3
+            "rmnpi": 0.87,
+            "bioIndex": 0.75
         },
         {
             "id": 7,
-            "rmnpi": 0.8,
-            "bioIndex": 0.6
+            "rmnpi": 0.89,
+            "bioIndex": 0.88
         },
         {
             "id": 8,
-            "rmnpi": 0.8,
-            "bioIndex": 0.55
+            "rmnpi": 0.75,
+            "bioIndex": 0.66
         },
         {
             "id": 9,
-            "rmnpi": 1.0,
-            "bioIndex": 0.68
+            "rmnpi": 0.61,
+            "bioIndex": 0.38
         },
         {
             "id": 10,
-            "rmnpi": 0.9,
-            "bioIndex": 0.42
+            "rmnpi": 0.31,
+            "bioIndex": 0.26
         },
         {
             "id": 11,
-            "rmnpi": 0.55,
-            "bioIndex": 0.99
+            "rmnpi": 0.29,
+            "bioIndex": 0.76
         },
         {
             "id": 12,
-            "rmnpi": 0.73,
-            "bioIndex": 0.63
+            "rmnpi": 0.25,
+            "bioIndex": 0.65
         },
         {
             "id": 13,
-            "rmnpi": 0.47,
-            "bioIndex": 0.6
-        },
-        {
-            "id": 14,
-            "rmnpi": 0.4,
-            "bioIndex": 0.16
-        },
-        {
-            "id": 15,
-            "rmnpi": 0.39,
-            "bioIndex": 0.42
-        },
-        {
-            "id": 16,
-            "rmnpi": 0.44,
-            "bioIndex": 0.41
-        },
-        {
-            "id": 17,
-            "rmnpi": 0.83,
+            "rmnpi": 0.16,
             "bioIndex": 0.83
         },
         {
+            "id": 14,
+            "rmnpi": 0.69,
+            "bioIndex": 0.94
+        },
+        {
+            "id": 15,
+            "rmnpi": 0.18,
+            "bioIndex": 0.57
+        },
+        {
+            "id": 16,
+            "rmnpi": 0.48,
+            "bioIndex": 0.89
+        },
+        {
+            "id": 17,
+            "rmnpi": 0.24,
+            "bioIndex": 0.2
+        },
+        {
             "id": 18,
-            "rmnpi": 0.08,
-            "bioIndex": 0.9
+            "rmnpi": 0.13,
+            "bioIndex": 0.17
         },
         {
             "id": 19,
-            "rmnpi": 0.16,
-            "bioIndex": 0.74
+            "rmnpi": 0.67,
+            "bioIndex": 0.96
         }
     ],
     "datacenter": {
@@ -2144,7 +2144,7 @@ window.OCEANIQ_DATA = {
             {
                 "name": "Compute Cycles",
                 "before": 54086508,
-                "after": 9124778
+                "after": 9124708
             },
             {
                 "name": "Analysis Time (s)",

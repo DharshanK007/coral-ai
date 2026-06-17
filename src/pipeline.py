@@ -620,11 +620,14 @@ def run_pipeline(
         # SYNC DASHBOARD & 3D GLOBE WITH PLOT 7 ECO-RISK & LAND MASK
         # ==========================================================
         # Detect land cells natively and accurately
+        thetao_col = "thetao" if "thetao" in df.columns else "sst"
+        so_col = "so" if "so" in df.columns else "salinity"
+
         try:
             from global_land_mask import globe as global_land_mask_globe
             is_land = global_land_mask_globe.is_land(df["lat"].values, df["lon"].values)
         except ImportError:
-            is_land = df["thetao"].isna()
+            is_land = df[thetao_col].isna()
         
         # Replicate Plot 7 eco_risk calculation to exactly match the 2D hotspots
         def local_norm01(arr):
@@ -633,15 +636,15 @@ def run_pipeline(
             if a_max - a_min < 1e-8: return np.full_like(arr, 0.5)
             return np.clip((arr - a_min) / (a_max - a_min), 0.01, 1.0)
             
-        thetao_mean, thetao_std = df["thetao"].mean(), df["thetao"].std()
-        so_mean, so_std = df["so"].mean(), df["so"].std()
+        thetao_mean, thetao_std = df[thetao_col].mean(), df[thetao_col].std()
+        so_mean, so_std = df[so_col].mean(), df[so_col].std()
         
         # Handle cases where std is 0 or NaN
         if pd.isna(thetao_std) or thetao_std == 0: thetao_std = 1.0
         if pd.isna(so_std) or so_std == 0: so_std = 1.0
         
-        anomaly_score = np.abs(df["thetao"] - thetao_mean)/thetao_std + np.abs(df["so"] - so_mean)/so_std
-        sst_anomaly_score = np.abs(df["thetao"] - thetao_mean)/thetao_std
+        anomaly_score = np.abs(df[thetao_col] - thetao_mean)/thetao_std + np.abs(df[so_col] - so_mean)/so_std
+        sst_anomaly_score = np.abs(df[thetao_col] - thetao_mean)/thetao_std
         
         n1 = local_norm01(df["npi_score"])
         n2 = local_norm01(anomaly_score)
@@ -691,11 +694,12 @@ def run_pipeline(
         # Group by lat/lon and calculate the 95th Percentile over time to capture sustained historical events
         # while mathematically filtering out 1-day sensor anomalies or noise.
         # First filter out land cells fully so they do not show up in the top 150 points
-        df_ocean_only = df[~is_land].copy() if len(df[~is_land]) > 0 else df
-        
         # EXTREME MEMORY FIX: Drop unneeded columns and force garbage collection before groupby
         import gc
-        df_ocean_only = df_ocean_only[["lat", "lon", "npi_score"]]
+        cols_to_keep = ["lat", "lon", "npi_score"]
+        if thetao_col in df.columns: cols_to_keep.append(thetao_col)
+        if "recon_error" in df.columns: cols_to_keep.append("recon_error")
+        df_ocean_only = df.loc[~is_land, cols_to_keep].copy() if len(df[~is_land]) > 0 else df[cols_to_keep].copy()
         gc.collect()
         
         # NOTE: Reverted back to .max() instead of .quantile(0.95) because Pandas quantile 

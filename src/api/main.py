@@ -1,10 +1,15 @@
 # FastAPI entry point
 import json
 import os
+import mimetypes
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+
+# Register JS and JSX MIME types explicitly to fix Windows registry overrides
+mimetypes.add_type("application/javascript", ".js")
+mimetypes.add_type("application/javascript", ".jsx")
 
 app = FastAPI(title="AI Ocean Platform API")
 
@@ -47,7 +52,19 @@ def get_dashboard_data():
 
 # Mount the static frontend directory so it runs on the same port as the API
 root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-frontend_path = os.path.join(root_dir, "frontend")
-if os.path.exists(frontend_path):
-    app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
+frontend_dist_path = os.path.join(root_dir, "frontend", "dist")
+frontend_src_path = os.path.join(root_dir, "frontend")
+
+@app.get("/data.js")
+def get_data_js():
+    js_path = os.path.join(root_dir, "frontend", "data.js")
+    if os.path.exists(js_path):
+        from fastapi.responses import FileResponse
+        return FileResponse(js_path, media_type="application/javascript")
+    return JSONResponse(content={"error": "Not found"}, status_code=404)
+
+if os.path.exists(frontend_dist_path):
+    app.mount("/", StaticFiles(directory=frontend_dist_path, html=True), name="frontend")
+elif os.path.exists(frontend_src_path):
+    app.mount("/", StaticFiles(directory=frontend_src_path, html=True), name="frontend")
 

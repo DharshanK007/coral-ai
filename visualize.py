@@ -54,8 +54,14 @@ if not PARQUET_PATH.exists():
     print(f"ERROR: Data not found at {PARQUET_PATH}.")
     sys.exit(1)
 
-df = pd.read_parquet(PARQUET_PATH)
-df["time"] = pd.to_datetime(df["time"])
+import pyarrow.parquet as pq
+parquet_file = pq.ParquetFile(PARQUET_PATH)
+cols_to_load = [c for c in ["time", "lat", "lon", "no3", "so", "thetao", "chl", "chl_proxy", "nutrient_proxy", "chlorophyll"] if c in parquet_file.schema.names]
+
+df = pd.read_parquet(PARQUET_PATH, columns=cols_to_load)
+
+# memory optimization: convert time to datetime more efficiently or use infer_datetime_format
+df["time"] = pd.to_datetime(df["time"], infer_datetime_format=True)
 
 def haversine_min(lat, lon, mouths):
     R = 6371.0
