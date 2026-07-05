@@ -180,7 +180,7 @@ The platform can be used for:
 > **Note:** This website is currently being served securely from a local environment via a tunnel.
 
 **How it works & Why I chose this approach:**
-The app runs on our local hardware and uses a secure tunnel (like Cloudflare) to route global internet traffic. This creates an outbound connection without the security risk of opening local firewall ports. Because Coral AI relies on heavy ML models that require **real computing power** (like dedicated GPUs), running it locally allow to deliver high performance without the massive costs associated with renting specialized cloud servers.
+The app runs on local hardware and uses a secure tunnel (like Cloudflare) to route global internet traffic. This creates an outbound connection without the security risk of opening local firewall ports. Because Coral AI relies on heavy ML models that require **real computing power** (like dedicated GPUs), running it locally allow to deliver high performance without the massive costs associated with renting specialized cloud servers.
 
 
 ## 💡 Summary
