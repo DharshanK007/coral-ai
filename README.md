@@ -174,7 +174,7 @@ The platform can be used for:
 ---
 ## 🌍 Live Demo
 
-**🚀 Experience the project live:** [Coral AI Global Link](coraldarwin.online)
+**🚀 Experience the project live:** [coraldarwin.online]
 
 > **Note:** This website is currently being served securely from a local environment via a tunnel.
 
