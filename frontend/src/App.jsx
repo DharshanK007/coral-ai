@@ -216,12 +216,6 @@ const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate, server
                 <Icon.Wave className="w-4 h-4 text-white" />
             </div>
             <span className="oi-brand font-bold text-base tracking-normal" style={{ background: 'linear-gradient(90deg, #2dd4bf, #c084fc, #fb7185)' }}>CORAL AI</span>
-            <div className="hidden lg:flex ml-4 px-3 py-1 rounded-full items-center gap-2 border border-white/10" style={{ background: 'rgba(0,0,0,0.3)' }}>
-                <div className={`w-2 h-2 rounded-full ${serverStatus === 'live' ? 'bg-green-500 shadow-[0_0_8px_#22c55e] animate-pulse' : 'bg-red-500 shadow-[0_0_8px_#ef4444]'}`}></div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-300">
-                    {serverStatus === 'live' ? 'Pipeline: LIVE (Local PC)' : 'Pipeline: OFFLINE (Cloud)'}
-                </span>
-            </div>
         </div>
         <div className="hidden md:flex gap-6 items-center">
             <button onClick={() => onNavigate('intelligence')} className={`nav-link ${currentPage === 'intelligence' ? 'active' : ''}`}>Intelligence</button>
@@ -247,9 +241,12 @@ const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate, server
                     <span className="text-gray-300 mr-2">Logged in as: <strong className="text-ocean-seafoam">{user}</strong></span>
                 </div>
             )}
-            <span className="flex items-center gap-1.5 border border-ocean-seafoam/30 rounded-full px-2.5 py-1 text-[10px] font-mono font-semibold tracking-wider text-ocean-seafoam uppercase" style={{ background: 'rgba(45,212,191,0.06)' }}>
-                <span className="status-dot"></span> Live
-            </span>
+            <div className="flex px-3 py-1 rounded-full items-center gap-2 border border-white/10" style={{ background: 'rgba(0,0,0,0.3)' }}>
+                <div className={`w-2 h-2 rounded-full ${serverStatus === 'live' ? 'bg-green-500 shadow-[0_0_8px_#22c55e] animate-pulse' : 'bg-red-500 shadow-[0_0_8px_#ef4444]'}`}></div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-300">
+                    {serverStatus === 'live' ? 'PC: LIVE' : 'PC: OFFLINE'}
+                </span>
+            </div>
             {user && (
                 <button onClick={onLogout}
                     className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white border border-gray-700 hover:border-gray-400 px-2.5 py-1.5 rounded-lg transition">
