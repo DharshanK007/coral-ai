@@ -4,12 +4,8 @@ services:
     name: coraldarwin-cloud
     env: docker
     dockerfilePath: ./backend.Dockerfile
-    plan: starter # Starter plan is recommended for data processing (RAM)
+    plan: free # Use the free tier to avoid credit card requirements
     region: ohio
-    disk:
-      name: coral-data
-      mountPath: /app/data
-      sizeGB: 10 # 10GB persistent storage for Parquet files
     envVars:
       - key: LOG_LEVEL
         value: INFO
