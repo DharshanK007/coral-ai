@@ -143,7 +143,8 @@ class UnifiedLoader:
             rain_df = self._ds_to_df(ds, var_name)
             if not rain_df.empty:
                 rain_df["seasonal_factor"] = np.clip(rain_df[var_name] / 200.0, 0, 1)
-                dfs.append(rain_df[["time", "lat", "lon", "seasonal_factor"]])
+                rain_df["rainfall"] = rain_df[var_name]
+                dfs.append(rain_df[["time", "lat", "lon", "seasonal_factor", "rainfall"]])
                 print(f"  [Align] Open-Meteo Rainfall Processed: {len(rain_df)} rows snapped to ocean grid")
 
         if not dfs:

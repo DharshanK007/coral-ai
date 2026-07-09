@@ -1,0 +1,28 @@
+{
+  "projectRoot": "C:\\Users\\Dharshan.K\\OneDrive\\Desktop\\coral-",
+  "batchFiles": [
+    {"path": "src/intelligence/anomaly_narrator.py", "language": "python", "sizeLines": 26, "fileCategory": "code"},
+    {"path": "src/intelligence/data_quality_assessor.py", "language": "python", "sizeLines": 24, "fileCategory": "code"},
+    {"path": "src/intelligence/insight_engine.py", "language": "python", "sizeLines": 37, "fileCategory": "code"},
+    {"path": "src/intelligence/pattern_discoverer.py", "language": "python", "sizeLines": 28, "fileCategory": "code"},
+    {"path": "src/intelligence/retention_reporter.py", "language": "python", "sizeLines": 25, "fileCategory": "code"},
+    {"path": "src/intelligence/similarity_searcher.py", "language": "python", "sizeLines": 27, "fileCategory": "code"},
+    {"path": "src/intelligence/trend_analyst.py", "language": "python", "sizeLines": 26, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/intelligence/anomaly_narrator.py": [],
+    "src/intelligence/data_quality_assessor.py": [],
+    "src/intelligence/insight_engine.py": [
+      "src/intelligence/anomaly_narrator.py",
+      "src/intelligence/data_quality_assessor.py",
+      "src/intelligence/pattern_discoverer.py",
+      "src/intelligence/retention_reporter.py",
+      "src/intelligence/similarity_searcher.py",
+      "src/intelligence/trend_analyst.py"
+    ],
+    "src/intelligence/pattern_discoverer.py": [],
+    "src/intelligence/retention_reporter.py": [],
+    "src/intelligence/similarity_searcher.py": [],
+    "src/intelligence/trend_analyst.py": []
+  }
+}

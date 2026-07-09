@@ -7,7 +7,7 @@
     <meta name="description" content="Advanced 3D planetary risk visualization dashboard for ocean pollution monitoring powered by AI.">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oi&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Rajdhani:wght@400;500;600;700&display=block" rel="stylesheet">
 
     <!-- Globe.gl Dependencies -->
     <script src="//unpkg.com/three"></script>
@@ -199,10 +199,10 @@
             text-decoration: none;
         }
         .topbar-brand-name {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 20px;
-            letter-spacing: 0.05em;
+            font-family: 'Oi', cursive;
+            font-weight: 400;
+            font-size: 17px;
+            letter-spacing: 0.02em;
             background: linear-gradient(135deg, #00F5C4 0%, #00B4D8 50%, #7DF9FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -270,6 +270,7 @@
             padding: 20px;
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);
         }
@@ -529,11 +530,16 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
             opacity: 0;
             transform: translateX(20px);
             pointer-events: none;
             transition: opacity 0.35s ease-out, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.03);
+        }
+        #details-sidebar > * {
+            flex-shrink: 0;
         }
         #details-sidebar.visible {
             opacity: 1;
@@ -728,6 +734,110 @@
         #left-panel .panel-card:nth-child(1) { animation: fadeSlideUp 0.5s ease 0.1s both; }
         #left-panel .panel-card:nth-child(2) { animation: fadeSlideUp 0.5s ease 0.2s both; }
         #left-panel .panel-card:nth-child(3) { animation: fadeSlideUp 0.5s ease 0.3s both; }
+
+        /* ══════════════════════════════════════════════════════ */
+        /* FEATURE 4 — GLASSMORPHISM & MICRO-ANIMATIONS UPGRADE  */
+        /* ══════════════════════════════════════════════════════ */
+
+        /* Enhanced glassmorphism for panel cards */
+        .panel-card {
+            background: rgba(4, 18, 32, 0.72) !important;
+            backdrop-filter: blur(28px) saturate(200%) brightness(1.08) !important;
+            -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.08) !important;
+            border: 1px solid rgba(0, 245, 196, 0.13) !important;
+            box-shadow:
+                0 4px 32px rgba(0,0,0,0.45),
+                inset 0 1px 0 rgba(255,255,255,0.06),
+                inset 0 -1px 0 rgba(0,0,0,0.2) !important;
+        }
+        /* Shimmer sweep on hover */
+        .panel-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; right: 0;
+            height: 100%;
+            background: linear-gradient(105deg, transparent 40%, rgba(0,245,196,0.07) 50%, transparent 60%);
+            transition: left 0.6s ease;
+            pointer-events: none;
+            z-index: 1;
+            border-radius: inherit;
+        }
+        .panel-card:hover::before { left: 100%; }
+        .panel-card:hover {
+            border-color: rgba(0, 245, 196, 0.26) !important;
+            box-shadow:
+                0 8px 48px rgba(0,0,0,0.55),
+                0 0 0 1px rgba(0,245,196,0.1),
+                0 0 40px rgba(0,245,196,0.05),
+                inset 0 1px 0 rgba(255,255,255,0.08) !important;
+            transform: translateY(-2px) perspective(1000px) rotateX(0.8deg);
+        }
+        /* Enhanced inspection sidebar */
+        #details-sidebar {
+            background: rgba(2, 10, 20, 0.88) !important;
+            backdrop-filter: blur(32px) saturate(220%) brightness(1.1) !important;
+            -webkit-backdrop-filter: blur(32px) saturate(220%) brightness(1.1) !important;
+            box-shadow:
+                0 12px 60px rgba(0,0,0,0.6),
+                inset 0 1px 0 rgba(255,255,255,0.06),
+                0 0 0 1px rgba(255,171,64,0.08) !important;
+        }
+        /* Enhanced top bar */
+        #topbar {
+            background: rgba(2, 8, 16, 0.88) !important;
+            backdrop-filter: blur(32px) saturate(200%) !important;
+            -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+            box-shadow: 0 1px 0 rgba(0,245,196,0.08), 0 8px 40px rgba(0,0,0,0.5) !important;
+        }
+        /* Risk badge pulsing glow */
+        @keyframes riskPulse {
+            0%, 100% { box-shadow: 0 0 8px currentColor; }
+            50% { box-shadow: 0 0 22px currentColor, 0 0 40px currentColor; }
+        }
+        .risk-badge { animation: riskPulse 2.5s ease-in-out infinite; }
+        /* NPI value count-up flash */
+        @keyframes valueFlash {
+            0% { opacity: 0; transform: scale(0.85); filter: blur(4px); }
+            60% { opacity: 1; transform: scale(1.04); filter: blur(0); }
+            100% { transform: scale(1); }
+        }
+        .npi-value.counting { animation: valueFlash 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+        /* Data field value slide-in */
+        @keyframes fieldSlide {
+            0% { opacity: 0; transform: translateX(-8px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .data-field-value.animate-in { animation: fieldSlide 0.35s ease forwards; }
+        /* Toggle switch glow */
+        .toggle-switch input:checked + .toggle-track {
+            box-shadow: 0 0 18px rgba(0, 245, 196, 0.6), 0 0 4px rgba(0,245,196,0.8) !important;
+        }
+        /* Metric button 3D press */
+        .metric-btn:active { transform: translateY(1px) scale(0.97); }
+        .metric-btn.active {
+            box-shadow: 0 0 24px rgba(0,201,167,0.4), 0 0 8px rgba(0,201,167,0.6), 0 4px 14px rgba(0,0,0,0.35) !important;
+        }
+
+        /* ══════════════════════════════════ */
+        /* FEATURE 1 — OCEAN CURRENT CANVAS  */
+        /* ══════════════════════════════════ */
+        #particle-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.5;
+            mix-blend-mode: screen;
+            transition: opacity 0.5s ease;
+        }
+        #particle-canvas.hidden { opacity: 0; }
+        /* Particle toggle button */
+        #particle-toggle-wrap {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
     </style>
 </head>
 <body>
@@ -798,6 +908,18 @@
                     <span class="toggle-track"></span>
                     <span class="toggle-thumb"></span>
                 </label>
+            </div>
+
+            <!-- Particle Toggle (Feature 1 control) -->
+            <div id="particle-toggle-wrap">
+                <div class="toggle-row">
+                    <span class="field-label" style="margin-bottom:0;">Ocean Current Particles</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked id="particle-toggle" onchange="toggleParticles(this.checked)">
+                        <span class="toggle-track"></span>
+                        <span class="toggle-thumb"></span>
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -893,6 +1015,10 @@
         </div>
     </div>
 
+    <!-- ═══ FEATURE 1: Ocean Current Particle Canvas ═══ -->
+    <canvas id="particle-canvas"></canvas>
+
+
     <!-- ─── Script Block ─── -->
     <script>
         // ── Generate Star Field ──
@@ -937,16 +1063,16 @@
 
         // ── Map Labels (Cities, Oceans, Rivers) ──
         const MAP_LABELS = [
-            // Cities
-            { name: "Chennai",        lat: 13.0827, lon: 80.2707, size: 0.45, type: "city" },
-            { name: "Kolkata",        lat: 22.5726, lon: 88.3639, size: 0.45, type: "city" },
-            { name: "Mumbai",         lat: 18.9667, lon: 72.8333, size: 0.45, type: "city" },
-            { name: "Kochi",          lat: 9.9312,  lon: 76.2673, size: 0.45, type: "city" },
-            { name: "Visakhapatnam",  lat: 17.6868, lon: 83.2185, size: 0.45, type: "city" },
-            { name: "Mangalore",      lat: 12.8688, lon: 74.8436, size: 0.45, type: "city" },
-            { name: "Goa",            lat: 15.2993, lon: 74.1240, size: 0.45, type: "city" },
-            { name: "Nagapattinam",   lat: 10.7672, lon: 79.8420, size: 0.45, type: "city" },
-            { name: "Tuticorin",      lat: 8.7642,  lon: 78.1348, size: 0.45, type: "city" },
+            // Cities (with geography-optimized offsets to prevent overlap)
+            { name: "Chennai",        lat: 13.0827, lon: 80.2707, size: 0.45, type: "city", offsetDir: "right" },
+            { name: "Kolkata",        lat: 22.5726, lon: 88.3639, size: 0.45, type: "city", offsetDir: "right" },
+            { name: "Mumbai",         lat: 18.9667, lon: 72.8333, size: 0.45, type: "city", offsetDir: "left" },
+            { name: "Kochi",          lat: 9.9312,  lon: 76.2673, size: 0.45, type: "city", offsetDir: "left" },
+            { name: "Visakhapatnam",  lat: 17.6868, lon: 83.2185, size: 0.45, type: "city", offsetDir: "right" },
+            { name: "Mangalore",      lat: 12.8688, lon: 74.8436, size: 0.45, type: "city", offsetDir: "left" },
+            { name: "Goa",            lat: 15.2993, lon: 74.1240, size: 0.45, type: "city", offsetDir: "left" },
+            { name: "Nagapattinam",   lat: 10.7672, lon: 79.8420, size: 0.45, type: "city", offsetDir: "right" },
+            { name: "Tuticorin",      lat: 8.7642,  lon: 78.1348, size: 0.45, type: "city", offsetDir: "right" },
             // Oceans
             { name: "BAY OF BENGAL",  lat: 14.5,    lon: 87.0,    size: 1.0,  type: "ocean" },
             { name: "ARABIAN SEA",    lat: 15.0,    lon: 68.0,    size: 1.0,  type: "ocean" },
@@ -1140,23 +1266,58 @@
                 .htmlAltitude(0.01)
                 .htmlElement(d => {
                     const el = document.createElement('div');
-                    el.style.display = 'flex';
-                    el.style.flexDirection = 'column';
-                    el.style.alignItems = 'center';
+                    el.style.position = 'relative';
+                    el.style.width = '0px';
+                    el.style.height = '0px';
                     el.style.pointerEvents = 'none'; // Magic! Allows clicking through the text
-                    el.style.color = d.type === 'ocean' ? 'rgba(0, 229, 255, 0.4)' : d.type === 'river' ? 'rgba(56, 189, 248, 0.9)' : 'rgba(255, 255, 255, 1.0)';
                     el.style.fontFamily = "'Space Grotesk', sans-serif";
-                    el.style.fontSize = d.type === 'ocean' ? '22px' : d.type === 'river' ? '12px' : '16px';
                     el.style.fontWeight = d.type === 'ocean' ? '700' : '500';
                     el.style.letterSpacing = d.type === 'ocean' ? '0.2em' : '0.05em';
-                    el.style.textShadow = '0 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)';
                     el.style.whiteSpace = 'nowrap';
-                    el.style.transform = 'translate(-50%, -50%)'; // Center perfectly
 
                     if (d.type === 'city') {
-                        el.innerHTML = `<div style="width: 5px; height: 5px; background: white; border-radius: 50%; margin-bottom: 4px; box-shadow: 0 0 6px white;"></div>${d.name}`;
+                        // Centered pinpoint dot
+                        const dot = document.createElement('div');
+                        dot.style.position = 'absolute';
+                        dot.style.left = '-2.5px';
+                        dot.style.top = '-2.5px';
+                        dot.style.width = '5px';
+                        dot.style.height = '5px';
+                        dot.style.background = 'white';
+                        dot.style.borderRadius = '50%';
+                        dot.style.boxShadow = '0 0 6px white';
+                        el.appendChild(dot);
+
+                        // Offset text label
+                        const txt = document.createElement('div');
+                        txt.style.position = 'absolute';
+                        txt.style.color = 'rgba(255, 255, 255, 1.0)';
+                        txt.style.fontSize = '14px';
+                        txt.style.textShadow = '0 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.6)';
+                        
+                        if (d.offsetDir === 'left') {
+                            txt.style.right = '8px';
+                            txt.style.top = '50%';
+                            txt.style.transform = 'translateY(-50%)';
+                        } else {
+                            txt.style.left = '8px';
+                            txt.style.top = '50%';
+                            txt.style.transform = 'translateY(-50%)';
+                        }
+                        txt.innerText = d.name;
+                        el.appendChild(txt);
                     } else {
-                        el.innerHTML = d.name;
+                        // Oceans & rivers centered text
+                        const txt = document.createElement('div');
+                        txt.style.position = 'absolute';
+                        txt.style.left = '0px';
+                        txt.style.top = '0px';
+                        txt.style.transform = 'translate(-50%, -50%)';
+                        txt.style.color = d.type === 'ocean' ? 'rgba(0, 229, 255, 0.4)' : 'rgba(56, 189, 248, 0.9)';
+                        txt.style.fontSize = d.type === 'ocean' ? '22px' : '12px';
+                        txt.style.textShadow = '0 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)';
+                        txt.innerText = d.name;
+                        el.appendChild(txt);
                     }
                     return el;
                 })
@@ -1261,7 +1422,7 @@
         }
 
         // ── Update Visuals ──
-        function updateVisuals() {
+        window.updateVisuals = function updateVisuals() {
             if (!globeInstance) return;
 
             // Height: flat by default, raises on hover/click
@@ -1390,6 +1551,132 @@
         }
     </script>
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- FEATURE 4 EXTENSION — Glassmorphism JS (count-up, animate) -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <script>
+    (function patchDisplayDetails() {
+        const _origDisplayDetails = window.displayDetails;
+        // We override after DOM is fully parsed via DOMContentLoaded
+        window.displayDetails = function(d) {
+            // Call original
+            _origDisplayDetails(d);
+            // Micro-animation: flash npi value
+            const npiEl = document.getElementById('cell-rmnpi');
+            npiEl.classList.remove('counting');
+            void npiEl.offsetWidth;
+            npiEl.classList.add('counting');
+            // Slide-in data fields with staggered delay
+            document.querySelectorAll('.data-field-value').forEach((el, i) => {
+                el.classList.remove('animate-in');
+                void el.offsetWidth;
+                el.style.animationDelay = (i * 0.06) + 's';
+                el.classList.add('animate-in');
+            });
+        };
+    })();
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- FEATURE 1 — Dynamic Ocean Current Particles             -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <script>
+    (function initOceanParticles() {
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, particles = [], animId, particlesVisible = true;
+
+        // Resize canvas to fill viewport
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Ocean current vector field — simulates Indian Ocean gyres
+        // Returns a [vx, vy] velocity for a particle at normalized (nx, ny) in [0,1]
+        function currentField(nx, ny, t) {
+            // North Indian Ocean clockwise gyre (summer, post-monsoon)
+            const gyreX = Math.sin(ny * Math.PI + t * 0.3) * 0.7 + Math.cos(nx * Math.PI * 1.5) * 0.3;
+            const gyreY = Math.cos(nx * Math.PI + t * 0.3) * 0.5 + Math.sin(ny * Math.PI * 1.2) * 0.4;
+            // Bay of Bengal counter-rotation
+            const bobX = Math.sin((ny - 0.3) * Math.PI * 2 + t * 0.25) * 0.5;
+            const bobY = -Math.cos((nx - 0.7) * Math.PI * 2 + t * 0.25) * 0.5;
+            // Blend based on position (east = BoB, west = Arabian Sea)
+            const blend = Math.max(0, Math.min(1, (nx - 0.5) * 2));
+            return [
+                gyreX * (1 - blend) + bobX * blend,
+                gyreY * (1 - blend) + bobY * blend
+            ];
+        }
+
+        // Particle constructor
+        function makeParticle() {
+            return {
+                x: Math.random() * W,
+                y: Math.random() * H,
+                age: Math.random() * 120,
+                life: 100 + Math.random() * 140,
+                speed: 0.4 + Math.random() * 0.7,
+                size: 0.8 + Math.random() * 1.4,
+                // Color: teal for main current, blue for BoB, faint amber for warm core
+                hue: Math.random() > 0.75 ? (Math.random() > 0.5 ? 185 : 40) : 168,
+                sat: 80 + Math.random() * 20,
+            };
+        }
+
+        // Spawn initial particles — reduced count for subtlety
+        const COUNT = 160;
+        for (let i = 0; i < COUNT; i++) particles.push(makeParticle());
+
+        let t = 0;
+        function draw() {
+            animId = requestAnimationFrame(draw);
+            t += 0.004;
+            // Clear canvas completely — no dark overlay on globe
+            ctx.clearRect(0, 0, W, H);
+
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.age++;
+                if (p.age > p.life) {
+                    particles[i] = makeParticle();
+                    continue;
+                }
+                const nx = p.x / W, ny = p.y / H;
+                const [vx, vy] = currentField(nx, ny, t);
+                p.x += vx * p.speed;
+                p.y += vy * p.speed;
+                // Wrap around edges
+                if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+                if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+                const lifeRatio = p.age / p.life;
+                const alpha = lifeRatio < 0.15
+                    ? lifeRatio / 0.15
+                    : lifeRatio > 0.8 ? 1 - (lifeRatio - 0.8) / 0.2
+                    : 1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${p.hue}, ${p.sat}%, 80%, ${alpha * 0.32})`;
+                ctx.fill();
+            }
+        }
+
+        draw();
+
+        // Global toggle function
+        window.toggleParticles = function(show) {
+            particlesVisible = show;
+            canvas.classList.toggle('hidden', !show);
+        };
+    })();
+    </script>
+
+
+
     <!-- ═══ DECORATIVE: Bioluminescent Particles & Ambient Effects ═══ -->
     <script>
     (function() {
@@ -1440,6 +1727,22 @@
                 card.style.transform = '';
             });
         });
+    })();
+    </script>
+    <script>
+    (function() {
+        const stopScrollProp = (el) => {
+            if (!el) return;
+            const preventAndStop = (e) => {
+                e.stopPropagation();
+            };
+            el.addEventListener('wheel', preventAndStop, { passive: false });
+            el.addEventListener('mousewheel', preventAndStop, { passive: false });
+            el.addEventListener('DOMMouseScroll', preventAndStop, { passive: false });
+            el.addEventListener('touchmove', preventAndStop, { passive: false });
+        };
+        stopScrollProp(document.getElementById('left-panel'));
+        stopScrollProp(document.getElementById('details-sidebar'));
     })();
     </script>
 </body>

@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:\\Users\\Dharshan.K\\OneDrive\\Desktop\\coral-",
+  "batchFiles": [
+    {"path": ".dockerignore", "language": "unknown", "sizeLines": 15, "fileCategory": "infra"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 181, "fileCategory": "docs"},
+    {"path": "docker-compose.yml", "language": "yaml", "sizeLines": 27, "fileCategory": "infra"},
+    {"path": "render.yaml", "language": "yaml", "sizeLines": 29, "fileCategory": "config"},
+    {"path": "requirements.txt", "language": "txt", "sizeLines": 47, "fileCategory": "docs"},
+    {"path": "run.bat", "language": "batch", "sizeLines": 2, "fileCategory": "script"},
+    {"path": "start_server.bat", "language": "batch", "sizeLines": 10, "fileCategory": "script"}
+  ],
+  "batchImportData": {}
+}

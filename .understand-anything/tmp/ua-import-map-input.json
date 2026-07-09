@@ -1,0 +1,1013 @@
+{
+  "projectRoot": "C:/Users/Dharshan.K/OneDrive/Desktop/coral-",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "sizeLines": 15,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend.Dockerfile",
+      "language": "dockerfile",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "config/feature_registry.yaml",
+      "language": "yaml",
+      "sizeLines": 124,
+      "fileCategory": "config"
+    },
+    {
+      "path": "config/settings.yaml",
+      "language": "yaml",
+      "sizeLines": 78,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260309_055035.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260309_055530.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260309_064213.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260309_064240.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260309_064252.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260310_061518.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260310_163553.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260310_163849.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260311_060005.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260312_150713.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260313_085854.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260313_090406.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260313_091330.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260313_095520.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260314_105147.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260314_105930.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260317_081447.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260317_092703.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260318_043454.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260318_063236.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260318_063416.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260323_090527.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260323_101736.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260327_085358.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260327_090754.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260410_083816.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260602_103952.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260602_104221.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260605_080204.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260613_070539.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260613_072936.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260613_141528.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260613_141942.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260613_144419.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_052332.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_053310.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_054257.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_055145.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_060116.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_063918.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_070205.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_103837.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_104416.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_114046.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_114627.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_122310.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_124336.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_131616.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_141039.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_143959.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_170951.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_172920.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260614_173726.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260615_122229.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260615_131323.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260615_143051.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260615_161219.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260615_170843.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260615_173821.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260616_080818.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260616_083701.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260616_090252.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260616_163347.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260617_033812.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260617_040343.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260617_042418.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260617_043122.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260617_045201.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_132151.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_133410.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_145609.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_145615.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_164809.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_165224.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260629_171139.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_151614.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_152359.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_160510.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_162641.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_180118.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_194606.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260630_204156.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260702_064501.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260702_181106.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260703_050458.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260703_060344.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260703_061130.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260703_090914.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260703_092857.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260703_093602.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260705_144313.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/insights/biodiversity/biodiversity_report_20260707_175548.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "data/users.db",
+      "language": "db",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "diagnose_copernicus.py",
+      "language": "python",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 27,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "frontend/.dockerignore",
+      "language": "unknown",
+      "sizeLines": 6,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "frontend/app.js",
+      "language": "javascript",
+      "sizeLines": 1124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/data.js",
+      "language": "javascript",
+      "sizeLines": 2392,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/frontend.Dockerfile",
+      "language": "dockerfile",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/globe.html",
+      "language": "html",
+      "sizeLines": 1468,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/index.html",
+      "language": "html",
+      "sizeLines": 89,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/inline_fix.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/nginx.conf",
+      "language": "conf",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/package.json",
+      "language": "json",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/postcss.config.js",
+      "language": "javascript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/public/data.js",
+      "language": "javascript",
+      "sizeLines": 2168,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/public/globe.html",
+      "language": "html",
+      "sizeLines": 1749,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/App.jsx",
+      "language": "javascript",
+      "sizeLines": 2236,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/index.css",
+      "language": "css",
+      "sizeLines": 436,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/main.jsx",
+      "language": "javascript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/style.css",
+      "language": "css",
+      "sizeLines": 328,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/tailwind.config.js",
+      "language": "javascript",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/vite.config.js",
+      "language": "javascript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "inject_app.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "patch_authmodal.py",
+      "language": "python",
+      "sizeLines": 249,
+      "fileCategory": "code"
+    },
+    {
+      "path": "patch_features.py",
+      "language": "python",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "patch_hooks.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "patch_multipage.py",
+      "language": "python",
+      "sizeLines": 277,
+      "fileCategory": "code"
+    },
+    {
+      "path": "patch_visual.py",
+      "language": "python",
+      "sizeLines": 254,
+      "fileCategory": "code"
+    },
+    {
+      "path": "query",
+      "language": "unknown",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 181,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "render.yaml",
+      "language": "yaml",
+      "sizeLines": 29,
+      "fileCategory": "config"
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "sizeLines": 47,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "run.bat",
+      "language": "batch",
+      "sizeLines": 2,
+      "fileCategory": "script"
+    },
+    {
+      "path": "src/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/api/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/api/main.py",
+      "language": "python",
+      "sizeLines": 301,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/datacenter/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/datacenter/resource_allocator.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/datacenter/storage_tiering.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/datacenter/workload_scheduler.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/__init__.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/chirps_fetcher.py",
+      "language": "python",
+      "sizeLines": 178,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/copernicus_fetcher.py",
+      "language": "python",
+      "sizeLines": 367,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/nasa_fetcher.py",
+      "language": "python",
+      "sizeLines": 159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/noaa_fetcher.py",
+      "language": "python",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/open_meteo_fetcher.py",
+      "language": "python",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ingestion/unified_loader.py",
+      "language": "python",
+      "sizeLines": 194,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/anomaly_narrator.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/biodiversity_assessor.py",
+      "language": "python",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/data_quality_assessor.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/insight_engine.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/llm_explainer.py",
+      "language": "python",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/ocean_agent.py",
+      "language": "python",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/pattern_discoverer.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/retention_reporter.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/similarity_searcher.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/intelligence/trend_analyst.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/model/__init__.py",
+      "language": "python",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/model/autoencoder.py",
+      "language": "python",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/model/latent_analyzer.py",
+      "language": "python",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/model/npi_head.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/model/rm_npi.py",
+      "language": "python",
+      "sizeLines": 103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/model/trainer.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/pipeline.py",
+      "language": "python",
+      "sizeLines": 984,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/preprocessing/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/preprocessing/adaptive_tiling.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/preprocessing/feature_registry.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "start_server.bat",
+      "language": "batch",
+      "sizeLines": 10,
+      "fileCategory": "script"
+    },
+    {
+      "path": "test_om.py",
+      "language": "python",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "visualize.py",
+      "language": "python",
+      "sizeLines": 438,
+      "fileCategory": "code"
+    }
+  ]
+}

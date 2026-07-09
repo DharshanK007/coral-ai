@@ -1,0 +1,579 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/intelligence/anomaly_narrator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "AnomalyNarrator",
+          "startLine": 5,
+          "endLine": 26,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AnomalyNarrator",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 7
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generate",
+          "callee": "np.array",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "np.array",
+          "lineNumber": 15
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 17
+        },
+        {
+          "caller": "generate",
+          "callee": "np.argmax",
+          "lineNumber": 17
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 18
+        },
+        {
+          "caller": "generate",
+          "callee": "float",
+          "lineNumber": 24
+        },
+        {
+          "caller": "generate",
+          "callee": "np.linalg.norm",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/intelligence/data_quality_assessor.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "DataQualityAssessor",
+          "startLine": 5,
+          "endLine": 24,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DataQualityAssessor",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 7
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 9
+        },
+        {
+          "caller": "generate",
+          "callee": "np.mean",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "np.argmax",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 15
+        },
+        {
+          "caller": "generate",
+          "callee": "float",
+          "lineNumber": 16
+        },
+        {
+          "caller": "generate",
+          "callee": "np.mean",
+          "lineNumber": 16
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 22
+        },
+        {
+          "caller": "generate",
+          "callee": "np.sum",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/intelligence/insight_engine.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "InsightEngine",
+          "startLine": 10,
+          "endLine": 37,
+          "methods": [
+            "__init__",
+            "generate_report"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "InsightEngine",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "AnomalyNarrator",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__init__",
+          "callee": "PatternDiscoverer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "__init__",
+          "callee": "TrendAnalyst",
+          "lineNumber": 19
+        },
+        {
+          "caller": "__init__",
+          "callee": "DataQualityAssessor",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__init__",
+          "callee": "SimilaritySearcher",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__init__",
+          "callee": "RetentionReporter",
+          "lineNumber": 22
+        },
+        {
+          "caller": "generate_report",
+          "callee": "gen.generate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "generate_report",
+          "callee": "insights.append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "generate_report",
+          "callee": "insights.append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "generate_report",
+          "callee": "type",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/intelligence/pattern_discoverer.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "PatternDiscoverer",
+          "startLine": 12,
+          "endLine": 28,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PatternDiscoverer",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 15
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 19
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 20
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 21
+        },
+        {
+          "caller": "generate",
+          "callee": "range",
+          "lineNumber": 21
+        },
+        {
+          "caller": "generate",
+          "callee": "\", \".join",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/intelligence/retention_reporter.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "RetentionReporter",
+          "startLine": 5,
+          "endLine": 25,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RetentionReporter",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 7
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 12
+        },
+        {
+          "caller": "generate",
+          "callee": "np.sum",
+          "lineNumber": 12
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generate",
+          "callee": "np.sum",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "np.sum",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/intelligence/similarity_searcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "SimilaritySearcher",
+          "startLine": 5,
+          "endLine": 27,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SimilaritySearcher",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 7
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 9
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 10
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 12
+        },
+        {
+          "caller": "generate",
+          "callee": "np.linalg.norm",
+          "lineNumber": 16
+        },
+        {
+          "caller": "generate",
+          "callee": "int",
+          "lineNumber": 18
+        },
+        {
+          "caller": "generate",
+          "callee": "np.argmin",
+          "lineNumber": 18
+        },
+        {
+          "caller": "generate",
+          "callee": "float",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/intelligence/trend_analyst.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "TrendAnalyst",
+          "startLine": 5,
+          "endLine": 26,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TrendAnalyst",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 7
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generate",
+          "callee": "len",
+          "lineNumber": 9
+        },
+        {
+          "caller": "generate",
+          "callee": "float",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generate",
+          "callee": "np.mean",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generate",
+          "callee": "float",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "np.std",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generate",
+          "callee": "float",
+          "lineNumber": 17
+        },
+        {
+          "caller": "generate",
+          "callee": "np.mean",
+          "lineNumber": 17
+        },
+        {
+          "caller": "generate",
+          "callee": "comp_history.items",
+          "lineNumber": 17
+        },
+        {
+          "caller": "generate",
+          "callee": "max",
+          "lineNumber": 18
+        },
+        {
+          "caller": "generate",
+          "callee": "comp_means.get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "generate",
+          "callee": "cycle_data.get",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

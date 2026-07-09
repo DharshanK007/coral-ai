@@ -1,0 +1,2186 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/ingestion/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/ingestion/chirps_fetcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 178,
+      "nonEmptyLines": 150,
+      "classes": [
+        {
+          "name": "CHIRPSFetcher",
+          "startLine": 22,
+          "endLine": 178,
+          "methods": [
+            "__init__",
+            "fetch",
+            "fetch_latest",
+            "rainfall_to_seasonal_factor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CHIRPSFetcher",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 37
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.output_dir.mkdir",
+          "lineNumber": 38
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 53
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 54
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.Timestamp",
+          "lineNumber": 56
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.Timestamp",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.Timestamp",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetch",
+          "callee": "datetime.utcnow",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.DateOffset",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 63
+        },
+        {
+          "caller": "fetch",
+          "callee": "end.strftime",
+          "lineNumber": 63
+        },
+        {
+          "caller": "fetch",
+          "callee": "output_path.exists",
+          "lineNumber": 76
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 77
+        },
+        {
+          "caller": "fetch",
+          "callee": "requests.get",
+          "lineNumber": 79
+        },
+        {
+          "caller": "fetch",
+          "callee": "response.raise_for_status",
+          "lineNumber": 80
+        },
+        {
+          "caller": "fetch",
+          "callee": "open",
+          "lineNumber": 81
+        },
+        {
+          "caller": "fetch",
+          "callee": "response.iter_content",
+          "lineNumber": 82
+        },
+        {
+          "caller": "fetch",
+          "callee": "f.write",
+          "lineNumber": 83
+        },
+        {
+          "caller": "fetch",
+          "callee": "output_path.stat",
+          "lineNumber": 84
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 85
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 87
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.DateOffset",
+          "lineNumber": 88
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 91
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.DateOffset",
+          "lineNumber": 92
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 95
+        },
+        {
+          "caller": "fetch",
+          "callee": "xr.open_dataset",
+          "lineNumber": 98
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fetch",
+          "callee": "list",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 102
+        },
+        {
+          "caller": "fetch",
+          "callee": "dict",
+          "lineNumber": 102
+        },
+        {
+          "caller": "fetch",
+          "callee": "next",
+          "lineNumber": 105
+        },
+        {
+          "caller": "fetch",
+          "callee": "c.lower",
+          "lineNumber": 105
+        },
+        {
+          "caller": "fetch",
+          "callee": "next",
+          "lineNumber": 106
+        },
+        {
+          "caller": "fetch",
+          "callee": "c.lower",
+          "lineNumber": 106
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.sel",
+          "lineNumber": 111
+        },
+        {
+          "caller": "fetch",
+          "callee": "slice",
+          "lineNumber": 112
+        },
+        {
+          "caller": "fetch",
+          "callee": "slice",
+          "lineNumber": 113
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.sel",
+          "lineNumber": 116
+        },
+        {
+          "caller": "fetch",
+          "callee": "slice",
+          "lineNumber": 117
+        },
+        {
+          "caller": "fetch",
+          "callee": "slice",
+          "lineNumber": 118
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.rename",
+          "lineNumber": 127
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.expand_dims",
+          "lineNumber": 130
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.Timestamp",
+          "lineNumber": 131
+        },
+        {
+          "caller": "fetch",
+          "callee": "all_data.append",
+          "lineNumber": 134
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.DateOffset",
+          "lineNumber": 139
+        },
+        {
+          "caller": "fetch",
+          "callee": "ValueError",
+          "lineNumber": 142
+        },
+        {
+          "caller": "fetch",
+          "callee": "xr.concat",
+          "lineNumber": 144
+        },
+        {
+          "caller": "fetch",
+          "callee": "combined.dims.get",
+          "lineNumber": 145
+        },
+        {
+          "caller": "fetch",
+          "callee": "combined.dims.get",
+          "lineNumber": 146
+        },
+        {
+          "caller": "fetch",
+          "callee": "combined.dims.get",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 148
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 149
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "datetime.utcnow",
+          "lineNumber": 160
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 161
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "self.fetch",
+          "lineNumber": 162
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "start.strftime",
+          "lineNumber": 163
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "end.strftime",
+          "lineNumber": 164
+        },
+        {
+          "caller": "rainfall_to_seasonal_factor",
+          "callee": "next",
+          "lineNumber": 173
+        },
+        {
+          "caller": "rainfall_to_seasonal_factor",
+          "callee": "v.lower",
+          "lineNumber": 174
+        },
+        {
+          "caller": "rainfall_to_seasonal_factor",
+          "callee": "v.lower",
+          "lineNumber": 174
+        },
+        {
+          "caller": "rainfall_to_seasonal_factor",
+          "callee": "list",
+          "lineNumber": 175
+        },
+        {
+          "caller": "rainfall_to_seasonal_factor",
+          "callee": "(rain / 200.0).clip",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/ingestion/copernicus_fetcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 367,
+      "nonEmptyLines": 319,
+      "classes": [
+        {
+          "name": "CopernicusFetcher",
+          "startLine": 35,
+          "endLine": 367,
+          "methods": [
+            "__init__",
+            "fetch",
+            "_fetch_with_api_key",
+            "_fetch_with_password",
+            "_add_bgc",
+            "_fetch_erddap_fallback",
+            "to_dataframe",
+            "fetch_latest"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CopernicusFetcher",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 59
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.output_dir.mkdir",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetch",
+          "callee": "self._fetch_with_api_key",
+          "lineNumber": 82
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 87
+        },
+        {
+          "caller": "fetch",
+          "callee": "self._fetch_with_password",
+          "lineNumber": 92
+        },
+        {
+          "caller": "fetch",
+          "callee": "str",
+          "lineNumber": 97
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 99
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 100
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 102
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 103
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 105
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 106
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 109
+        },
+        {
+          "caller": "fetch",
+          "callee": "self._fetch_erddap_fallback",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "ImportError",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "print",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "', '.join",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "print",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "phy_path.exists",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "print",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "xr.open_dataset",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "copernicusmarine.open_dataset",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "ds.isel",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "ds.load",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "ds.to_netcdf",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "print",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "dict",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_fetch_with_api_key",
+          "callee": "self._add_bgc",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "ImportError",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "copernicusmarine.login",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "ValueError",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "print",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "phy_path.exists",
+          "lineNumber": 190
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "print",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "xr.open_dataset",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "print",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "', '.join",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "copernicusmarine.open_dataset",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "ds.isel",
+          "lineNumber": 206
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "ds.load",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "ds.to_netcdf",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "print",
+          "lineNumber": 209
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "dict",
+          "lineNumber": 209
+        },
+        {
+          "caller": "_fetch_with_password",
+          "callee": "self._add_bgc",
+          "lineNumber": 211
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "bgc_path.exists",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "xr.open_dataset",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "copernicusmarine.open_dataset",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "ds_bgc.isel",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "ds_bgc.load",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "ds_bgc.to_netcdf",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "print",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "dict",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "ds_bgc.interp",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "xr.merge",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_add_bgc",
+          "callee": "print",
+          "lineNumber": 253
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "datetime.utcnow",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "min",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "timedelta",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "datetime.strptime",
+          "lineNumber": 267
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "safe_end.strftime",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "print",
+          "lineNumber": 270
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "sst_path.exists",
+          "lineNumber": 273
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "print",
+          "lineNumber": 274
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "xr.open_dataset",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "requests.get",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "resp.raise_for_status",
+          "lineNumber": 285
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "open",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "resp.iter_content",
+          "lineNumber": 287
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "f.write",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "xr.open_dataset",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "print",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "dict",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "ds_sst.rename",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "chl_path.exists",
+          "lineNumber": 297
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "print",
+          "lineNumber": 298
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "xr.open_dataset",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "xr.merge",
+          "lineNumber": 301
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "requests.get",
+          "lineNumber": 314
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "resp.raise_for_status",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "open",
+          "lineNumber": 316
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "resp.iter_content",
+          "lineNumber": 317
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "f.write",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "xr.open_dataset",
+          "lineNumber": 319
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "ds_chl.rename",
+          "lineNumber": 321
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "print",
+          "lineNumber": 322
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "dict",
+          "lineNumber": 322
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "xr.merge",
+          "lineNumber": 323
+        },
+        {
+          "caller": "_fetch_erddap_fallback",
+          "callee": "print",
+          "lineNumber": 325
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "ds.isel",
+          "lineNumber": 334
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "ds.to_dataframe().reset_index",
+          "lineNumber": 336
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "ds.to_dataframe",
+          "lineNumber": 336
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "c.lower",
+          "lineNumber": 340
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "df.rename",
+          "lineNumber": 345
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "np.sqrt",
+          "lineNumber": 348
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "df[\"no3\"].quantile",
+          "lineNumber": 351
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "(df[\"no3\"] / no3_max).clip",
+          "lineNumber": 352
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "np.log10",
+          "lineNumber": 355
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "df[\"chl\"].clip",
+          "lineNumber": 355
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "((chl_log - (-2)) / 3).clip",
+          "lineNumber": 356
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "df.dropna",
+          "lineNumber": 360
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "datetime.utcnow",
+          "lineNumber": 364
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 364
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 365
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "self.fetch",
+          "lineNumber": 366
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "start.strftime",
+          "lineNumber": 366
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "end.strftime",
+          "lineNumber": 366
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/ingestion/nasa_fetcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 159,
+      "classes": [
+        {
+          "name": "NASAFetcher",
+          "startLine": 16,
+          "endLine": 159,
+          "methods": [
+            "__init__",
+            "fetch",
+            "_fetch_via_erddap",
+            "_fetch_via_earthdata",
+            "fetch_latest",
+            "chlor_to_nutrient_proxy"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NASAFetcher",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 36
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.output_dir.mkdir",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fetch",
+          "callee": "self._fetch_via_erddap",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 61
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 62
+        },
+        {
+          "caller": "fetch",
+          "callee": "self._fetch_via_earthdata",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "print",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "requests.get",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "response.raise_for_status",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "open",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "response.iter_content",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "f.write",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "xr.open_dataset",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_fetch_via_erddap",
+          "callee": "print",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "ValueError",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "earthaccess.login",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "earthaccess.search_data",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "ValueError",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "earthaccess.download",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "str",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "xr.open_mfdataset",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "print",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "len",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "requests.Session",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "session.get",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_fetch_via_earthdata",
+          "callee": "print",
+          "lineNumber": 128
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "datetime.utcnow",
+          "lineNumber": 140
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 141
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "self.fetch",
+          "lineNumber": 142
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "start.strftime",
+          "lineNumber": 143
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "end.strftime",
+          "lineNumber": 144
+        },
+        {
+          "caller": "chlor_to_nutrient_proxy",
+          "callee": "np.log10",
+          "lineNumber": 156
+        },
+        {
+          "caller": "chlor_to_nutrient_proxy",
+          "callee": "chlor.clip",
+          "lineNumber": 156
+        },
+        {
+          "caller": "chlor_to_nutrient_proxy",
+          "callee": "N.clip",
+          "lineNumber": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/ingestion/noaa_fetcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 124,
+      "classes": [
+        {
+          "name": "NOAAFetcher",
+          "startLine": 23,
+          "endLine": 148,
+          "methods": [
+            "__init__",
+            "fetch",
+            "fetch_latest",
+            "to_dataframe"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NOAAFetcher",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 39
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.output_dir.mkdir",
+          "lineNumber": 40
+        },
+        {
+          "caller": "fetch",
+          "callee": "datetime.utcnow",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fetch",
+          "callee": "timedelta",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fetch",
+          "callee": "datetime.strptime",
+          "lineNumber": 59
+        },
+        {
+          "caller": "fetch",
+          "callee": "safe_end.strftime",
+          "lineNumber": 61
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 62
+        },
+        {
+          "caller": "fetch",
+          "callee": "\",\".join",
+          "lineNumber": 64
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 75
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 76
+        },
+        {
+          "caller": "fetch",
+          "callee": "output_path.exists",
+          "lineNumber": 82
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 83
+        },
+        {
+          "caller": "fetch",
+          "callee": "xr.open_dataset",
+          "lineNumber": 84
+        },
+        {
+          "caller": "fetch",
+          "callee": "requests.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 91
+        },
+        {
+          "caller": "fetch",
+          "callee": "timedelta",
+          "lineNumber": 92
+        },
+        {
+          "caller": "fetch",
+          "callee": "datetime.strptime",
+          "lineNumber": 94
+        },
+        {
+          "caller": "fetch",
+          "callee": "min",
+          "lineNumber": 95
+        },
+        {
+          "caller": "fetch",
+          "callee": "datetime.strptime",
+          "lineNumber": 96
+        },
+        {
+          "caller": "fetch",
+          "callee": "ValueError",
+          "lineNumber": 97
+        },
+        {
+          "caller": "fetch",
+          "callee": "adjusted_end.strftime",
+          "lineNumber": 98
+        },
+        {
+          "caller": "fetch",
+          "callee": "adjusted_end.strftime",
+          "lineNumber": 102
+        },
+        {
+          "caller": "fetch",
+          "callee": "requests.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "fetch",
+          "callee": "response.raise_for_status",
+          "lineNumber": 113
+        },
+        {
+          "caller": "fetch",
+          "callee": "open",
+          "lineNumber": 115
+        },
+        {
+          "caller": "fetch",
+          "callee": "response.iter_content",
+          "lineNumber": 116
+        },
+        {
+          "caller": "fetch",
+          "callee": "f.write",
+          "lineNumber": 117
+        },
+        {
+          "caller": "fetch",
+          "callee": "xr.open_dataset",
+          "lineNumber": 120
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 121
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fetch",
+          "callee": "float",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds['sst'].min",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fetch",
+          "callee": "float",
+          "lineNumber": 123
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds['sst'].max",
+          "lineNumber": 123
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "datetime.utcnow",
+          "lineNumber": 136
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 136
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "self.fetch",
+          "lineNumber": 138
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "start.strftime",
+          "lineNumber": 139
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "end.strftime",
+          "lineNumber": 140
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "ds.to_dataframe().reset_index",
+          "lineNumber": 146
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "ds.to_dataframe",
+          "lineNumber": 146
+        },
+        {
+          "caller": "to_dataframe",
+          "callee": "df.dropna",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/ingestion/open_meteo_fetcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 172,
+      "classes": [
+        {
+          "name": "OpenMeteoFetcher",
+          "startLine": 14,
+          "endLine": 203,
+          "methods": [
+            "__init__",
+            "fetch",
+            "fetch_latest"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OpenMeteoFetcher",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.output_dir.mkdir",
+          "lineNumber": 29
+        },
+        {
+          "caller": "fetch",
+          "callee": "cache_file.exists",
+          "lineNumber": 45
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fetch",
+          "callee": "xr.open_dataset",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 49
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 50
+        },
+        {
+          "caller": "fetch",
+          "callee": "np.arange",
+          "lineNumber": 54
+        },
+        {
+          "caller": "fetch",
+          "callee": "np.arange",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fetch",
+          "callee": "range",
+          "lineNumber": 67
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 67
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 69
+        },
+        {
+          "caller": "fetch",
+          "callee": "\",\".join",
+          "lineNumber": 77
+        },
+        {
+          "caller": "fetch",
+          "callee": "map",
+          "lineNumber": 77
+        },
+        {
+          "caller": "fetch",
+          "callee": "\",\".join",
+          "lineNumber": 78
+        },
+        {
+          "caller": "fetch",
+          "callee": "map",
+          "lineNumber": 78
+        },
+        {
+          "caller": "fetch",
+          "callee": "range",
+          "lineNumber": 91
+        },
+        {
+          "caller": "fetch",
+          "callee": "requests.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 95
+        },
+        {
+          "caller": "fetch",
+          "callee": "response.raise_for_status",
+          "lineNumber": 96
+        },
+        {
+          "caller": "fetch",
+          "callee": "response.json",
+          "lineNumber": 97
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 103
+        },
+        {
+          "caller": "fetch",
+          "callee": "type",
+          "lineNumber": 103
+        },
+        {
+          "caller": "fetch",
+          "callee": "time.sleep",
+          "lineNumber": 104
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 106
+        },
+        {
+          "caller": "fetch",
+          "callee": "isinstance",
+          "lineNumber": 114
+        },
+        {
+          "caller": "fetch",
+          "callee": "enumerate",
+          "lineNumber": 117
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.DataFrame",
+          "lineNumber": 119
+        },
+        {
+          "caller": "fetch",
+          "callee": "all_data.append",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fetch",
+          "callee": "time.sleep",
+          "lineNumber": 124
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 127
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 131
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 132
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.date_range",
+          "lineNumber": 135
+        },
+        {
+          "caller": "fetch",
+          "callee": "d.replace",
+          "lineNumber": 136
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.to_datetime(start_date).replace",
+          "lineNumber": 138
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.to_datetime",
+          "lineNumber": 138
+        },
+        {
+          "caller": "fetch",
+          "callee": "np.zeros",
+          "lineNumber": 140
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "fetch",
+          "callee": "xr.Dataset",
+          "lineNumber": 141
+        },
+        {
+          "caller": "fetch",
+          "callee": "dict",
+          "lineNumber": 142
+        },
+        {
+          "caller": "fetch",
+          "callee": "dict",
+          "lineNumber": 145
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 151
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.concat",
+          "lineNumber": 155
+        },
+        {
+          "caller": "fetch",
+          "callee": "pd.to_datetime",
+          "lineNumber": 156
+        },
+        {
+          "caller": "fetch",
+          "callee": "combined_df['time'].dt.to_period",
+          "lineNumber": 159
+        },
+        {
+          "caller": "fetch",
+          "callee": "combined_df.groupby(['year_month', 'lat', 'lon'], as_index=False).agg",
+          "lineNumber": 160
+        },
+        {
+          "caller": "fetch",
+          "callee": "combined_df.groupby",
+          "lineNumber": 160
+        },
+        {
+          "caller": "fetch",
+          "callee": "monthly_df['year_month'].dt.to_timestamp",
+          "lineNumber": 164
+        },
+        {
+          "caller": "fetch",
+          "callee": "monthly_df.drop",
+          "lineNumber": 165
+        },
+        {
+          "caller": "fetch",
+          "callee": "monthly_df.to_csv",
+          "lineNumber": 170
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 171
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 171
+        },
+        {
+          "caller": "fetch",
+          "callee": "len",
+          "lineNumber": 171
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 172
+        },
+        {
+          "caller": "fetch",
+          "callee": "monthly_df.set_index",
+          "lineNumber": 175
+        },
+        {
+          "caller": "fetch",
+          "callee": "monthly_df.to_xarray",
+          "lineNumber": 176
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.dims.get",
+          "lineNumber": 178
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.dims.get",
+          "lineNumber": 179
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.dims.get",
+          "lineNumber": 180
+        },
+        {
+          "caller": "fetch",
+          "callee": "print",
+          "lineNumber": 181
+        },
+        {
+          "caller": "fetch",
+          "callee": "ds.to_netcdf",
+          "lineNumber": 185
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "datetime.utcnow",
+          "lineNumber": 197
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "timedelta",
+          "lineNumber": 198
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "self.fetch",
+          "lineNumber": 199
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "start.strftime",
+          "lineNumber": 200
+        },
+        {
+          "caller": "fetch_latest",
+          "callee": "end.strftime",
+          "lineNumber": 201
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/ingestion/unified_loader.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 194,
+      "nonEmptyLines": 169,
+      "classes": [
+        {
+          "name": "UnifiedLoader",
+          "startLine": 18,
+          "endLine": 194,
+          "methods": [
+            "__init__",
+            "fetch_all",
+            "align_and_merge",
+            "_ds_to_df"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UnifiedLoader",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.output_dir.mkdir",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__init__",
+          "callee": "CopernicusFetcher",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__init__",
+          "callee": "OpenMeteoFetcher",
+          "lineNumber": 36
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 56
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "self.copernicus.fetch",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 64
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 66
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 71
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 72
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 73
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "self.open_meteo.fetch",
+          "lineNumber": 75
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 80
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "len",
+          "lineNumber": 84
+        },
+        {
+          "caller": "fetch_all",
+          "callee": "print",
+          "lineNumber": 85
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "self.copernicus.to_dataframe",
+          "lineNumber": 110
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "col.lower",
+          "lineNumber": 114
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.rename",
+          "lineNumber": 115
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "col.lower",
+          "lineNumber": 116
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.rename",
+          "lineNumber": 117
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "(df_cop[\"lat\"] / target_resolution).round",
+          "lineNumber": 120
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "(df_cop[\"lon\"] / target_resolution).round",
+          "lineNumber": 121
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.select_dtypes(include=[np.number]).columns.tolist",
+          "lineNumber": 122
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.select_dtypes",
+          "lineNumber": 122
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.groupby([\"time\", \"lat_g\", \"lon_g\"])[num_cols]\r\n                           .mean()\r\n                           .reset_index()\r\n                           .rename",
+          "lineNumber": 125
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.groupby([\"time\", \"lat_g\", \"lon_g\"])[num_cols]\r\n                           .mean()\r\n                           .reset_index",
+          "lineNumber": 125
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.groupby([\"time\", \"lat_g\", \"lon_g\"])[num_cols]\r\n                           .mean",
+          "lineNumber": 125
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "df_cop.groupby",
+          "lineNumber": 125
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "dfs.append",
+          "lineNumber": 130
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 131
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 132
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "len",
+          "lineNumber": 132
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 133
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 134
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 135
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 136
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "next",
+          "lineNumber": 139
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "v.lower",
+          "lineNumber": 140
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "v.lower",
+          "lineNumber": 140
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "list",
+          "lineNumber": 141
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "self._ds_to_df",
+          "lineNumber": 143
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "np.clip",
+          "lineNumber": 145
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "dfs.append",
+          "lineNumber": 147
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 148
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "len",
+          "lineNumber": 148
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "pd.DataFrame",
+          "lineNumber": 151
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.merge",
+          "lineNumber": 156
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.sort_values",
+          "lineNumber": 159
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.select_dtypes",
+          "lineNumber": 160
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.groupby([\"lat\", \"lon\"])[num_cols].transform",
+          "lineNumber": 162
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.groupby",
+          "lineNumber": 162
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "x.interpolate",
+          "lineNumber": 162
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.dropna",
+          "lineNumber": 164
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "merged.to_parquet",
+          "lineNumber": 168
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 169
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "len",
+          "lineNumber": 169
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "len",
+          "lineNumber": 169
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 170
+        },
+        {
+          "caller": "align_and_merge",
+          "callee": "print",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "dim.lower",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "da.rename",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "coord_map.items",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "da.to_dataframe().reset_index",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "da.to_dataframe",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "df[keep].dropna",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "print",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_ds_to_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 194
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

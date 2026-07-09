@@ -1,0 +1,25 @@
+{
+  "projectRoot": "C:/Users/Dharshan.K/OneDrive/Desktop/coral-",
+  "batchFiles": [
+    {"path": "src/datacenter/resource_allocator.py", "language": "python", "sizeLines": 28, "fileCategory": "code"},
+    {"path": "src/datacenter/storage_tiering.py", "language": "python", "sizeLines": 37, "fileCategory": "code"},
+    {"path": "src/datacenter/workload_scheduler.py", "language": "python", "sizeLines": 64, "fileCategory": "code"},
+    {"path": "src/model/__init__.py", "language": "python", "sizeLines": 5, "fileCategory": "code"},
+    {"path": "src/model/autoencoder.py", "language": "python", "sizeLines": 166, "fileCategory": "code"},
+    {"path": "src/model/latent_analyzer.py", "language": "python", "sizeLines": 67, "fileCategory": "code"},
+    {"path": "src/model/npi_head.py", "language": "python", "sizeLines": 63, "fileCategory": "code"},
+    {"path": "src/model/rm_npi.py", "language": "python", "sizeLines": 103, "fileCategory": "code"},
+    {"path": "src/pipeline.py", "language": "python", "sizeLines": 984, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/datacenter/resource_allocator.py": [],
+    "src/datacenter/storage_tiering.py": [],
+    "src/datacenter/workload_scheduler.py": [],
+    "src/model/__init__.py": ["src/model/autoencoder.py", "src/model/latent_analyzer.py", "src/model/npi_head.py", "src/model/rm_npi.py"],
+    "src/model/autoencoder.py": [],
+    "src/model/latent_analyzer.py": [],
+    "src/model/npi_head.py": [],
+    "src/model/rm_npi.py": [],
+    "src/pipeline.py": ["src/datacenter/resource_allocator.py", "src/datacenter/storage_tiering.py", "src/datacenter/workload_scheduler.py", "src/ingestion/unified_loader.py", "src/intelligence/insight_engine.py", "src/model/autoencoder.py", "src/model/latent_analyzer.py", "src/model/npi_head.py", "src/model/rm_npi.py"]
+  }
+}

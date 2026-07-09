@@ -51,7 +51,8 @@ class CopernicusFetcher:
     BGC_DATASET = "cmems_mod_glo_bgc_my_0.25deg_P1M-m"
     BGC_VARS    = ["no3", "po4", "o2", "chl"]
 
-    ERDDAP_SST_ID = "ncdcOisst21Agg_LonPM180"
+
+    ERDDAP_SST_ID = "ncdcOisst2Agg_LonPM180"
     ERDDAP_CHL_ID = "erdVH2018chla8day"
 
     def __init__(self, output_dir: str = "data/raw/copernicus"):

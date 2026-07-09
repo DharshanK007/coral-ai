@@ -1,0 +1,187 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra",
+      "totalLines": 15,
+      "nonEmptyLines": 15,
+      "metrics": {}
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 181,
+      "nonEmptyLines": 119,
+      "sections": [
+        {
+          "heading": "🪸 𝐂𝐎𝐑𝐀𝐋 𝐀𝐈",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "AI-Driven Unified Data Platform for Oceanographic & Biodiversity Insights",
+          "level": 2,
+          "line": 2
+        },
+        {
+          "heading": "🚀 Key Features",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "🧠 Core Concept: RM-NPI",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "🏗️ System Architecture",
+          "level": 1,
+          "line": 56
+        },
+        {
+          "heading": "📊 Example Visualizations",
+          "level": 1,
+          "line": 78
+        },
+        {
+          "heading": "🌊 Ocean Ecological Risk Map",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "📈 RM-NPI Trend Over Time",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "🔍 Environmental Factor Contribution",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "⚠️ Environmental Anomaly Detection",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "🗺️ Environmental Data Coverage Map",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "🧪 Example Use Cases",
+          "level": 1,
+          "line": 119
+        },
+        {
+          "heading": "🔬 Technologies Used",
+          "level": 1,
+          "line": 131
+        },
+        {
+          "heading": "Storage Tier Distribution (per 334,890-cell cycle)",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "🌿 Ecological Impact Value",
+          "level": 2,
+          "line": 154
+        },
+        {
+          "heading": "Detected Threats from Live Biodiversity Reports (Dec 2022 – Feb 2023)",
+          "level": 3,
+          "line": 165
+        },
+        {
+          "heading": "💡 Summary",
+          "level": 2,
+          "line": 176
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "networks",
+          "level": 1,
+          "line": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "render.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 29,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 47,
+      "nonEmptyLines": 36,
+      "metrics": {}
+    },
+    {
+      "path": "run.bat",
+      "language": "batch",
+      "fileCategory": "script",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": "start_server.bat",
+      "language": "batch",
+      "fileCategory": "script",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {}
+    }
+  ]
+}

@@ -1,91 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Shrikhand&family=BioRhyme:wght@700;800&family=Righteous&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500;600&display=block');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-ocean-navy text-white overflow-x-hidden w-full m-0 p-0;
+    @apply overflow-x-hidden w-full m-0 p-0;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #03071e;
+    color: #e2e8f0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  h4, h5, h6 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  code, pre, .font-mono, .font-data {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
   }
 }
 
-/* Custom Scrollbar for Sci-Fi Feel */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0a1628; 
-}
+/* ── Custom Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #03071e; }
 ::-webkit-scrollbar-thumb {
-  background: #0d4f6b; 
-  border-radius: 4px;
+  background: linear-gradient(180deg, #c084fc, #2dd4bf, #f97316);
+  border-radius: 6px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #2dd4bf; 
-}
+::-webkit-scrollbar-thumb:hover { background: #2dd4bf; }
 
-/* Glow Utilities */
-.glow-border {
-  border: 1px solid rgba(45, 212, 191, 0.3);
-  box-shadow: 0 0 15px rgba(45, 212, 191, 0.1);
-  transition: all 0.3s ease;
+/* ── Ocean Parallax Container ─────────────────────────── */
+.ocean-parallax-section {
+  position: relative;
+  overflow: hidden;
 }
-
-.glow-border:hover {
-  border-color: rgba(45, 212, 191, 0.8);
-  box-shadow: 0 0 25px rgba(45, 212, 191, 0.4);
-}
-
-.glow-text {
-  text-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
-}
-
-/* The Crab Cursor */
-#custom-cursor {
-  position: fixed;
+.ocean-parallax-bg {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  will-change: transform;
+  /* Dimmed background to ensure maximum legibility of overlaying cards/text */
+  filter: brightness(0.78) saturate(1.15) contrast(1.05);
+  z-index: 0;
+}
+.ocean-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.section-content-z {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Glassmorphism Utilities ──────────────────────────── */
+.glass-card {
+  background: rgba(2, 6, 20, 0.72);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.30s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  background: rgba(2, 6, 20, 0.80);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(45,212,191,0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+}
+
+.glass-nav {
+  background: rgba(3, 7, 30, 0.75);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.glass-btn {
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-btn:hover {
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.30);
+}
+
+/* Legacy glow-card — keep for backward compat */
+.glow-card {
+  background: rgba(2, 6, 20, 0.72);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.10);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card:hover {
+  background: rgba(2, 6, 20, 0.80);
+  border-color: rgba(45,212,191,0.35);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.glow-border {
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-border:hover {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+/* ── Section overlays — ocean image visible but text readable ── */
+/* Gradient: dark at top/bottom (where headings/footers live), clear in middle */
+.section-overlay-intelligence {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.62) 0%,
+    rgba(5,30,60,0.28) 35%,
+    rgba(5,30,60,0.28) 65%,
+    rgba(2,8,24,0.68) 100%);
+}
+.section-overlay-trends {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.60) 0%,
+    rgba(5,10,35,0.25) 35%,
+    rgba(5,10,35,0.25) 65%,
+    rgba(2,8,24,0.65) 100%);
+}
+.section-overlay-zones {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.60) 0%,
+    rgba(5,15,40,0.25) 35%,
+    rgba(5,15,40,0.25) 65%,
+    rgba(2,8,24,0.65) 100%);
+}
+.section-overlay-risk {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.62) 0%,
+    rgba(25,5,5,0.28) 35%,
+    rgba(25,5,5,0.28) 65%,
+    rgba(2,8,24,0.68) 100%);
+}
+.section-overlay-biodiversity {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.60) 0%,
+    rgba(0,15,12,0.25) 35%,
+    rgba(0,15,12,0.25) 65%,
+    rgba(2,8,24,0.65) 100%);
+}
+.section-overlay-compression {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.62) 0%,
+    rgba(15,5,25,0.25) 35%,
+    rgba(15,5,25,0.25) 65%,
+    rgba(2,8,24,0.68) 100%);
+}
+/* Hero overlay — lighter in the center so background is always visible */
+.section-overlay-home {
+  background: linear-gradient(180deg,
+    rgba(2,8,24,0.45) 0%,
+    rgba(2,8,24,0.15) 25%,
+    rgba(2,8,24,0.15) 75%,
+    rgba(2,8,24,0.55) 100%);
+}
+.section-overlay-login {
+  background: linear-gradient(135deg,
+    rgba(2,8,24,0.68) 0%,
+    rgba(5,30,60,0.30) 50%,
+    rgba(2,8,24,0.72) 100%);
+}
+
+/* ── Hero gradient background ─────────────────────────── */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(13,79,107,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(192,132,252,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 10% 70%, rgba(251,113,133,0.08) 0%, transparent 50%);
+}
+
+/* ── Section label / overline ─────────────────────────── */
+.section-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(45,212,191,0.6);
+  margin-bottom: 0.4rem;
+}
+
+/* ── Gradient text utility ────────────────────────────── */
+.text-gradient-teal {
+  background: linear-gradient(135deg, #2dd4bf, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-purple {
+  background: linear-gradient(135deg, #c084fc, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-green {
+  background: linear-gradient(135deg, #34d399, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-coral {
+  background: linear-gradient(135deg, #fb7185, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60a5fa, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-hero {
+  background: linear-gradient(135deg, #ffffff 20%, #a5f3fc 50%, #c084fc 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glowing text ─────────────────────────────────────── */
+.glow-text { text-shadow: 0 0 20px rgba(45,212,191,0.4), 0 0 60px rgba(45,212,191,0.12); }
+
+/* ── Section heading drop-shadow for readability over bright images ── */
+/* Applied to h1, h2, h3 inside section-content-z */
+.section-content-z h1,
+.section-content-z h2,
+.section-content-z h3 {
+  text-shadow:
+    0 2px 12px rgba(0,0,0,0.85),
+    0 1px 3px rgba(0,0,0,0.95),
+    0 0 40px rgba(0,0,0,0.5);
+}
+/* Paragraph / small text drop shadow */
+.section-content-z p,
+.section-content-z span,
+.section-content-z .section-label {
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,1);
+}
+
+/* ── Status dot ───────────────────────────────────────── */
+.status-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e, 0 0 18px rgba(34,197,94,0.35);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px #22c55e, 0 0 18px rgba(34,197,94,0.35); }
+  50%       { opacity: 0.55; box-shadow: 0 0 4px #22c55e, 0 0 8px rgba(34,197,94,0.15); }
+}
+
+/* ── Gradient divider ─────────────────────────────────── */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192,132,252,0.5), rgba(45,212,191,0.5), transparent);
+  margin: 1.5rem 0;
+}
+
+/* ── Nav link ─────────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(226,232,240,0.65);
+  transition: color 0.2s;
+  text-decoration: none;
+  padding: 4px 0;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, #2dd4bf, #c084fc);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+.nav-link:hover { color: #fff; }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active {
+  color: #00F5C4 !important;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(0, 245, 196, 0.5);
+}
+.nav-link.active::after {
+  width: 100%;
+  background: linear-gradient(90deg, #00F5C4, #c084fc);
+}
+
+/* ── Auth card ────────────────────────────────────────── */
+.auth-card {
+  background: rgba(3,7,30,0.85);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 24px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.75), 0 0 80px rgba(13,79,107,0.20),
+              inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+/* ── Password rule chip ───────────────────────────────── */
+.rule-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(45,212,191,0.07);
+  border: 1px solid rgba(45,212,191,0.18);
+  color: rgba(45,212,191,0.72);
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.03em;
+}
+
+/* ── Input field ──────────────────────────────────────── */
+.input-field {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  color: #fff;
+  width: 100%;
+  padding: 0.72rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+}
+.input-field:focus {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(45,212,191,0.55);
+  box-shadow: 0 0 0 3px rgba(45,212,191,0.10);
+}
+.input-field::placeholder { color: rgba(156,163,175,0.35); }
+
+/* ── Leaflet Map override ─────────────────────────────── */
+.leaflet-container { border-radius: 12px; z-index: 10; }
+
+/* ── Crab Cursor ──────────────────────────────────────── */
+#custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform 0.05s linear;
 }
-
-.crab-icon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.6));
-  transition: transform 0.2s ease;
-}
-
-.crab-icon.flipped {
-  transform: scaleX(-1);
-}
-
-/* Snapping Animation */
+.crab-icon { width: 100%; height: 100%; filter: drop-shadow(0 0 5px rgba(255,107,107,0.6)); transition: transform 0.2s ease; }
+.crab-icon.flipped  { transform: scaleX(-1); }
+.crab-icon.snapping { animation: snapClaws 0.3s ease-in-out; }
 @keyframes snapClaws {
-  0% { transform: scale(1) translateY(0); }
-  30% { transform: scale(0.8) translateY(2px); }
-  50% { transform: scale(0.9) translateY(-5px); }
-  70% { transform: scale(0.8) translateY(2px); }
-  100% { transform: scale(1) translateY(0); }
+  0%   { transform: scale(1)   translateY(0); }
+  30%  { transform: scale(0.8) translateY(2px); }
+  50%  { transform: scale(0.9) translateY(-5px); }
+  70%  { transform: scale(0.8) translateY(2px); }
+  100% { transform: scale(1)   translateY(0); }
 }
 
-.crab-icon.snapping {
-  animation: snapClaws 0.3s ease-in-out;
+/* ── Shimmer loading effect ───────────────────────────── */
+.shimmer-bg {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.03) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.03) 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
 }
 
-/* Background Bubbles */
+/* ── Particle bubbles ─────────────────────────────────── */
 .bubble {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(45, 212, 191, 0.4) 0%, rgba(45, 212, 191, 0) 70%);
+  background: radial-gradient(circle at center, rgba(45,212,191,0.35) 0%, rgba(45,212,191,0) 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
 }
 
-.leaflet-container {
-  border-radius: 0.5rem;
-  z-index: 10;
+/* ── Metric number accent ─────────────────────────────── */
+.metric-num {
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }

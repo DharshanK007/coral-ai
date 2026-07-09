@@ -1,7 +1,7 @@
 services:
-  # 1. The Backend API
+  # Monolithic App: FastAPI Backend + React Frontend
   - type: web
-    name: backend
+    name: coraldarwin-cloud
     env: docker
     dockerfilePath: ./backend.Dockerfile
     plan: starter # Starter plan is recommended for data processing (RAM)
@@ -13,17 +13,8 @@ services:
     envVars:
       - key: LOG_LEVEL
         value: INFO
+      - key: DEPLOYMENT_MODE
+        value: cloud
       # Add API keys here securely in the Render dashboard later
       - key: NOAA_ERDDAP_BASE_URL
         value: https://coastwatch.pfeg.noaa.gov/erddap
-
-  # 2. The Frontend Dashboard
-  - type: web
-    name: frontend
-    env: docker
-    dockerfilePath: ./frontend/frontend.Dockerfile
-    plan: free # Frontend can run on the free tier
-    region: ohio
-    envVars:
-      - key: NODE_ENV
-        value: production

@@ -1,0 +1,26 @@
+{
+  "projectRoot": "C:/Users/Dharshan.K/OneDrive/Desktop/coral-",
+  "batchFiles": [
+    {"path": "data/insights/biodiversity/biodiversity_report_20260309_055035.json", "language": "json", "sizeLines": 7, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260309_055530.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260309_064213.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260309_064240.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260309_064252.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260310_061518.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260310_163553.json", "language": "json", "sizeLines": 7, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260310_163849.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260311_060005.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260312_150713.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260313_085854.json", "language": "json", "sizeLines": 7, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260313_090406.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260313_091330.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260313_095520.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260314_105147.json", "language": "json", "sizeLines": 7, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260314_105930.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260317_081447.json", "language": "json", "sizeLines": 7, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260317_092703.json", "language": "json", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260318_043454.json", "language": "json", "sizeLines": 32, "fileCategory": "config"},
+    {"path": "data/insights/biodiversity/biodiversity_report_20260318_063236.json", "language": "json", "sizeLines": 24, "fileCategory": "config"}
+  ],
+  "batchImportData": {}
+}

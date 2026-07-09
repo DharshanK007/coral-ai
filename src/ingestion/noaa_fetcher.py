@@ -31,7 +31,7 @@ class NOAAFetcher:
     - URL: https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg_LonPM180
     """
 
-    DATASET_ID = "ncdcOisst21Agg_LonPM180"
+    DATASET_ID = "ncdcOisst2Agg_LonPM180"
     VARIABLES = ["sst", "anom"]
 
     def __init__(self, output_dir: str = "data/raw/noaa"):
