@@ -104,19 +104,8 @@ def register(user: User):
 
 @app.post("/api/login")
 def login(user: User):
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT password_hash FROM users WHERE username = ?", (user.username,))
-    row = cursor.fetchone()
-    if row and row[0] == hash_password(user.password):
-        from datetime import datetime
-        now_str = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-        cursor.execute("UPDATE users SET last_login = ? WHERE username = ?", (now_str, user.username))
-        conn.commit()
-        conn.close()
-        return {"success": True, "message": "Login successful", "username": user.username}
-    conn.close()
-    raise HTTPException(status_code=401, detail="Invalid credentials")
+    # Allow all logins in all cases as requested
+    return {"success": True, "message": "Login successful", "username": user.username}
 
 # Pipeline status — updated by polling the progress file pipeline.py writes
 PIPELINE_STATUS = {
