@@ -228,10 +228,12 @@ const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate, server
                className={`nav-link flex items-center gap-1.5 ${currentPage === 'globe' ? 'active' : ''}`}>
                 <Icon.Globe className="w-3.5 h-3.5" /> Globe
             </button>
-            <button onClick={onRunPipeline}
-                className="flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg transition"
-                style={{ background: 'linear-gradient(135deg, #7c3aed, #0d4f6b, #2dd4bf)', color: '#fff', fontFamily: 'Syne, sans-serif', fontWeight: 700, boxShadow: '0 0 20px rgba(124,58,237,0.4)' }}>
-                <Icon.Play className="w-3 h-3" /> Run Pipeline
+            
+            <button onClick={serverStatus === 'live' ? onRunPipeline : undefined}
+                className={`flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg transition ${serverStatus === 'live' ? '' : 'opacity-60 cursor-not-allowed'}`}
+                style={serverStatus === 'live' ? { background: 'linear-gradient(135deg, #7c3aed, #0d4f6b, #2dd4bf)', color: '#fff', fontFamily: 'Syne, sans-serif', fontWeight: 700, boxShadow: '0 0 20px rgba(124,58,237,0.4)' } : { background: 'rgba(255,255,255,0.05)', color: '#9ca3af', fontFamily: 'Syne, sans-serif', fontWeight: 700, border: '1px solid rgba(255,255,255,0.1)' }}>
+                {serverStatus === 'live' ? <Icon.Play className="w-3 h-3" /> : <Icon.Lock className="w-3 h-3" />}
+                {serverStatus === 'live' ? 'Run Pipeline' : 'Compute Unavailable'}
             </button>
         </div>
         <div className="flex items-center gap-3">
@@ -244,7 +246,7 @@ const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate, server
             <div className="flex px-3 py-1 rounded-full items-center gap-2 border border-white/10" style={{ background: 'rgba(0,0,0,0.3)' }}>
                 <div className={`w-2 h-2 rounded-full ${serverStatus === 'live' ? 'bg-green-500 shadow-[0_0_8px_#22c55e] animate-pulse' : 'bg-red-500 shadow-[0_0_8px_#ef4444]'}`}></div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-300">
-                    {serverStatus === 'live' ? 'PC: LIVE' : 'PC: OFFLINE'}
+                    {serverStatus === 'live' ? 'EDGE COMPUTE: ACTIVE' : 'EDGE COMPUTE: OFFLINE'}
                 </span>
             </div>
             {user && (
@@ -258,7 +260,7 @@ const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate, server
 );
 
 // ── Hero ─────────────────────────────────────────────────────
-const Hero = ({ onNavigate }) => {
+const Hero = ({ onNavigate, db }) => {
     const bgRef = useParallax('home', 0.28);
     return (
         <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
@@ -2131,12 +2133,18 @@ const App = () => {
     const [user, setUser]             = useState(null);
     const [showPipeline, setShowPipeline] = useState(false);
     const [currentPage, setCurrentPage] = useState('home');
+    const [serverStatus, setServerStatus] = useState('offline');
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
     const loadData = () => {
+        fetch('/api/status?t=' + new Date().getTime(), { cache: 'no-store' })
+            .then(res => res.json())
+            .then(data => setServerStatus(data.status || 'offline'))
+            .catch(() => setServerStatus('offline'));
+
         fetch('/api/data?t=' + new Date().getTime(), { cache: 'no-store' })
             .then(res => {
                 if (!res.ok) throw new Error("API error " + res.status);
@@ -2181,7 +2189,7 @@ const App = () => {
             <div className="w-full flex-grow pt-[72px]">
                 {currentPage === 'home' && (
                     <>
-                        <Hero onNavigate={setCurrentPage} />
+                        <Hero onNavigate={setCurrentPage} db={db} />
                         <FeatureStrip onNavigate={setCurrentPage} db={db} />
                         <HomeNavigation onNavigate={setCurrentPage} />
                     </>
