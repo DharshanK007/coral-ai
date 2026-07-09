@@ -213,8 +213,8 @@ def get_pipeline_status():
 
 @app.get("/api/status")
 def get_status():
-    mode = os.environ.get("DEPLOYMENT_MODE", "local")
-    return {"status": "offline" if mode == "cloud" else "live"}
+    is_cloud = os.environ.get("RENDER") == "true" or os.environ.get("DEPLOYMENT_MODE") == "cloud"
+    return {"status": "offline" if is_cloud else "live"}
 
 @app.get("/api/data")
 def get_dashboard_data():
