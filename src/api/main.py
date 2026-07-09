@@ -222,6 +222,11 @@ def get_pipeline_status():
     global PIPELINE_STATUS
     return PIPELINE_STATUS
 
+@app.get("/api/status")
+def get_status():
+    mode = os.environ.get("DEPLOYMENT_MODE", "local")
+    return {"status": "offline" if mode == "cloud" else "live"}
+
 @app.get("/api/data")
 def get_dashboard_data():
     """

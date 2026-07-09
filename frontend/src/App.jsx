@@ -209,13 +209,19 @@ const SectionWrapper = ({ id, children, overlayClass }) => {
 };
 
 // ── Navbar ─────────────────────────────────────────────────────
-const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate }) => (
+const Navbar = ({ user, onLogout, onRunPipeline, currentPage, onNavigate, serverStatus }) => (
     <nav className="glass-nav fixed top-0 w-full z-[100] px-6 py-3 flex justify-between items-center">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate('home')}>
             <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #7c3aed, #0d4f6b, #2dd4bf)', boxShadow: '0 0 16px rgba(192,132,252,0.4)' }}>
                 <Icon.Wave className="w-4 h-4 text-white" />
             </div>
             <span className="oi-brand font-bold text-base tracking-normal" style={{ background: 'linear-gradient(90deg, #2dd4bf, #c084fc, #fb7185)' }}>CORAL AI</span>
+            <div className="hidden lg:flex ml-4 px-3 py-1 rounded-full items-center gap-2 border border-white/10" style={{ background: 'rgba(0,0,0,0.3)' }}>
+                <div className={`w-2 h-2 rounded-full ${serverStatus === 'live' ? 'bg-green-500 shadow-[0_0_8px_#22c55e] animate-pulse' : 'bg-red-500 shadow-[0_0_8px_#ef4444]'}`}></div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-300">
+                    {serverStatus === 'live' ? 'Pipeline: LIVE (Local PC)' : 'Pipeline: OFFLINE (Cloud)'}
+                </span>
+            </div>
         </div>
         <div className="hidden md:flex gap-6 items-center">
             <button onClick={() => onNavigate('intelligence')} className={`nav-link ${currentPage === 'intelligence' ? 'active' : ''}`}>Intelligence</button>
@@ -2173,7 +2179,7 @@ const App = () => {
     return (
         <div className="w-full flex flex-col items-center min-h-screen bg-[#02060f]">
             {showPipeline && <PipelineModal onClose={() => setShowPipeline(false)} onComplete={() => loadData()} onNavigate={setCurrentPage} />}
-            <Navbar user={user} onLogout={() => setUser(null)} onRunPipeline={() => setShowPipeline(true)} currentPage={currentPage} onNavigate={setCurrentPage} />
+            <Navbar user={user} onLogout={() => setUser(null)} onRunPipeline={() => setShowPipeline(true)} currentPage={currentPage} onNavigate={setCurrentPage} serverStatus={serverStatus} />
             
             <div className="w-full flex-grow pt-[72px]">
                 {currentPage === 'home' && (
