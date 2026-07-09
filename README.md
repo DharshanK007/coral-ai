@@ -172,6 +172,16 @@ The platform can be used for:
 > Both threats were detected automatically across 334,890 grid cells within a single pipeline cycle — an assessment that would require weeks of coordinated multi-agency fieldwork using traditional methods.
 
 ---
+## 🌍 Live Demo
+
+**🚀 Experience the project live:** [coraldarwin.online](https://coraldarwin.online)
+
+
+> **Note:** This website is currently being served securely from a local environment via a tunnel.
+
+**How it works & Why I chose this approach:**
+The app runs on local hardware and uses a secure tunnel (like Cloudflare) to route global internet traffic. This creates an outbound connection without the security risk of opening local firewall ports. Because Coral AI relies on heavy ML models that require **real computing power** (like dedicated GPUs), running it locally allow to deliver high performance without the massive costs associated with renting specialized cloud servers.
+
 
 ## 💡 Summary
 
