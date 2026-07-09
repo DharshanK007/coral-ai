@@ -13,9 +13,13 @@ import sys
 import re
 from pydantic import BaseModel
 
-# Register JS and JSX MIME types explicitly to fix Windows registry overrides
+# Register MIME types explicitly to fix Windows registry and Docker slim missing /etc/mime.types
 mimetypes.add_type("application/javascript", ".js")
 mimetypes.add_type("application/javascript", ".jsx")
+mimetypes.add_type("text/css", ".css")
+mimetypes.add_type("text/html", ".html")
+mimetypes.add_type("image/png", ".png")
+mimetypes.add_type("image/svg+xml", ".svg")
 
 # --- Database Setup ---
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data", "users.db")
