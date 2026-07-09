@@ -2,6 +2,7 @@
 .env.*
 data/raw/
 data/processed/
+!data/processed/dashboard_data.json
 data/models/
 __pycache__/
 *.pyc
